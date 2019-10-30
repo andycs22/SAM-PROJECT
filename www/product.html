@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Producto</title>
+  </head>
+  <body>
+    <header></header>
+
+    <h2>Editar producto</h2>
+    <nav class="option">
+      <ul>
+        <li>Crear</li>
+        <form class="create" enctype="multipart/form-data">
+          <fieldset>
+            <label for="name">Nombre</label>
+            <input type="text" name="name" />
+          </fieldset>
+          <fieldset>
+            <label for="description">Descripción</label>
+            <textarea
+              name="description"
+              cols="30"
+              rows="10"
+              placeholder="Escribe aquí"
+            ></textarea>
+          </fieldset>
+          <fieldset>
+            <label for="category">Categoría</label>
+            <select name="category" id="category">
+              <option value="seleccionar">Seleccionar</option>
+            </select>
+          </fieldset>
+          <fieldset>
+            <label for="image">Imagen</label>
+            <input type="file" name="image" />
+          </fieldset>
+          <fieldset>
+            <label for="price">Price</label>
+            <input type="number" name="price" />€
+          </fieldset>
+          <button type="submit">Publicar</button>
+        </form>
+        <li>Editar</li>
+        <a href="">Mostrar todos los productos</a>
+        <label for="search">Buscar</label>
+        <input type="search" name="search" placeholder="Nombre del producto" />
+        <button class="search">Buscar</button>
+        <button class="delete">Eliminar</button>
+      </ul>
+    </nav>
+
+    <footer></footer>
+  </body>
+</html>
