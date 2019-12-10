@@ -1,16 +1,27 @@
 'use strict';
 
 const express = require('express');
+const bodyParser = require('body-parser');
 const cors = require('cors');
-const routes = require('./routes');
+const routes = require('./routes'); //Mantengo esta ruta siguien el esquema de Jose.
 
 const app = express();
-app.use(express.json());
-
+app.use(bodyParser.json());
 app.use(cors());
 
-app.use('/api/account', routes.account);
-app.use('/api/auth', routes.auth);
+
+//ESPACIO PARA LAS RUTAS
+/*
+//
+//
+//
+//
+//
+//
+//
+//
+*/
+
 
 app.get('/', (req, res, next) => {
     res.send('base url: /api');
@@ -19,10 +30,16 @@ app.get('/', (req, res, next) => {
 let server = null;
 
 async function listen(port) {
-    if (server === null) {
+    try {
+        if (server) {
+            return server;
+        }
+
         server = await app.listen(port);
-    } else {
-        console.error('Can not listen, server already initialized');
+        return server;
+    } catch (e) {
+        console.error("Can't listen", e);
+        throw e;
     }
 }
 
@@ -31,7 +48,7 @@ async function close() {
         await server.close();
         server = null;
     } else {
-        console.error('can not close a non started server');
+        console.error("Can't close a non started server");
     }
 }
 

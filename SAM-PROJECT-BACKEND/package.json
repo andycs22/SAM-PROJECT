@@ -1,27 +1,31 @@
 {
-  "name": "SAM-PROJECT-BACKEND",
+  "name": "SAM-PROJECT",
   "version": "1.0.0",
-  "description": "",
+  "description": "Descuentos SW",
   "main": "index.js",
   "scripts": {
+    "start": "browser-sync start --server 'www' --files 'www'",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andycs22/SAM-PROJECT.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andycs22/SAM-PROJECT/issues"
+  },
+  "homepage": "https://github.com/andycs22/SAM-PROJECT#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.7"
+  },
   "dependencies": {
-    "@hapi/joi": "^16.1.7",
-    "@sendgrid/mail": "^6.4.0",
-    "bcrypt": "^3.0.6",
-    "cloudinary": "^1.17.0",
+    "body-parser": "^1.19.0",
     "cors": "^2.8.5",
-    "crypto-random-string": "^3.0.1",
-    "dotenv": "^8.2.0",
-    "eslint": "^6.6.0",
     "express": "^4.17.1",
-    "jsonwebtoken": "^8.5.1",
-    "multer": "^1.4.2",
-    "mysql2": "^2.0.0",
-    "uuidv4": "^6.0.0"
+    "mysql-promise": "^5.0.0",
+    "mysql2": "^2.0.2"
   }
 }
