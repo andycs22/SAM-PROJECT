@@ -14,6 +14,7 @@ app.use(cors());
 app.use('/api/account', routes.account);
 app.use('/api/auth', routes.auth);
 app.use('/api/ordersHistory', routes.ordersHistory);
+app.use('/api/package', routes.packageSam);
 app.use('/api/product', routes.product);
 
 app.get('/', (req, res, next) => {
