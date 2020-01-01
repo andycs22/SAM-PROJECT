@@ -7,7 +7,7 @@ const deletePackage = require('../controllers/package/delete-package')
 const getPackage = require('../controllers/package/get-package');
 
 router.post('/', checkAccountSession, createPackage);
-router.delete('/', checkAccountSession, deletePackage);
+router.delete('/:packageId', checkAccountSession, deletePackage);
 router.get('/', checkAccountSession, getPackage);
 
 module.exports = router;

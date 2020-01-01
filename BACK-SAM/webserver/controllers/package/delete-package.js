@@ -4,12 +4,22 @@ const mysqlPool = require('../../../database/mysql-pool');
 
 async function deletePackage(req, res, next) {
     const packageId = req.params.packageId;
-    const userId = req.claims.userId;
+    /*
+    const role = req.claims.role;
+
+    if (role !== 'Organizer') {
+        return res.status(401).send('sin permisos');
+    }
+    */
 
     try {
-        const sqlQuery = `DELETE FROM package WHERE id=${packageId} AND user_id=${userId}`;
+        const deleteQuery = `delete p.*, pip.* 
+        from package p
+        inner join product_include_package  pip
+        on  p.id=pip.id_paq
+        where p.id=pip.id_paq and p.id=${packageId}`;
         const connection = await mysqlPool.getConnection();
-        const [packageData] = await connection.execute(sqlQuery);
+        await connection.execute(deleteQuery);
         connection.release();
         return res.status(200).send('Package successfully deleted');
     } catch (e) {
