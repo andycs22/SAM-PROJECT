@@ -5,6 +5,7 @@ const Joi = require('@hapi/joi');
 
 async function validateSchema(payload) {
   const schema = Joi.object({
+    userId: Joi.string(),
     password: Joi.string(),
   });
   Joi.assert(payload, schema);
@@ -12,7 +13,10 @@ async function validateSchema(payload) {
 
 async function editAccount(req, res, next) {
   const userId = req.params.userId;
-  const userData = { ...req.body };
+  const userData = {
+    ...req.body,
+    userId,
+  };
 
   try {
     await validateSchema(userData);
