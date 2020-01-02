@@ -12,7 +12,7 @@ const {
 
 router.post('/', createAccountController);
 router.delete('/', checkAccountSession, deleteAccountController);
-router.put('/:idUser', checkAccountSession, editAccountController);
+router.put('/:userId', checkAccountSession, editAccountController);
 // router.get('/:idUser', getAccountController);
 
 module.exports = router;

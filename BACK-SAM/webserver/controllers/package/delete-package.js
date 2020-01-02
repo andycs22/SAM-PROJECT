@@ -4,13 +4,11 @@ const mysqlPool = require('../../../database/mysql-pool');
 
 async function deletePackage(req, res, next) {
     const packageId = req.params.packageId;
-    /*
     const role = req.claims.role;
 
     if (role !== 'Organizer') {
         return res.status(401).send('sin permisos');
     }
-    */
 
     try {
         const deleteQuery = `delete p.*, pip.* 

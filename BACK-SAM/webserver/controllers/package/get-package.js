@@ -3,10 +3,8 @@
 const mysqlPool = require('../../../database/mysql-pool');
 
 async function getPackage(req, res, next) {
-    const { userId, role } = req.claims;
-    if (role !== 'Organizer') {
-        return res.status(401).send('sin permisos');
-    }
+    const userId = req.claims.userId;
+
     try {
         const getPackageQuery = `select * from package p
         inner join product_include_package  pip

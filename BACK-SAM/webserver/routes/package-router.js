@@ -8,6 +8,6 @@ const getPackage = require('../controllers/package/get-package');
 
 router.post('/', checkAccountSession, createPackage);
 router.delete('/:packageId', checkAccountSession, deletePackage);
-router.get('/', checkAccountSession, getPackage);
+router.get('/', getPackage);
 
 module.exports = router;
