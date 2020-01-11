@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -11,39 +11,40 @@ app.use(express.json());
 
 app.use(cors());
 
-app.use("/api/account", routes.account);
-app.use('/api/acModif', routes.accountModif)
-app.use("/api/auth", routes.auth);
-app.use("/api/product", routes.product);
-app.use("/api/catalogue", routes.catalogue);
+app.use('/api/account', routes.account);
+app.use('/api/acModif', routes.accountModif);
+app.use('/api/auth', routes.auth);
+app.use('/api/package', routes.packageSam);
+app.use('/api/product', routes.product);
+app.use('/api/catalogue', routes.catalogue);
 app.use('/api/ordersHistory', routes.ordersHistory);
 app.use('/api/orderFinal', routes.orderFinal);
 app.use('/api/rateProduct', routes.rateProduct);
 
-app.get("/", (req, res, next) => {
-  res.send("base url: /api");
+app.get('/', (req, res, next) => {
+	res.send('base url: /api');
 });
 
 let server = null;
 
 async function listen(port) {
-  if (server === null) {
-    server = await app.listen(port);
-  } else {
-    console.error("Can not listen, server already initialized");
-  }
+	if (server === null) {
+		server = await app.listen(port);
+	} else {
+		console.error('Can not listen, server already initialized');
+	}
 }
 
 async function close() {
-  if (server) {
-    await server.close();
-    server = null;
-  } else {
-    console.error("can not close a non started server");
-  }
+	if (server) {
+		await server.close();
+		server = null;
+	} else {
+		console.error('can not close a non started server');
+	}
 }
 
 module.exports = {
-  listen,
-  close
+	listen,
+	close
 };
