@@ -5,9 +5,7 @@ const mysqlPool = require('../../../database/mysql-pool');
 
 async function validateSchema(payload) {
 	const schema = Joi.object({
-		date_begin: Joi.date().format('YYYY-MM-DD').utc(),
 		date_end: Joi.date().format('YYYY-MM-DD').utc(),
-		code_package: Joi.string(),
 		userId: Joi.number(),
 		id_product: Joi.number(),
 		id_paq: Joi.number(),
@@ -33,7 +31,20 @@ async function createPackage(req, res, next) {
 	}
 
 	try {
-		const code_package = ParseInt(Math.random() * 1000000);
+		const code_package = ParseInt(Math.floor(Math.random() * 1000000)); //con esto redondea. Cambia el número de la multiplicación si quieres, porque aunque tenga varchar de 20, no tiene por qué ocupar los 20 dígitos, y da igual que solamente vayan números, no va a dar fallo.
+
+		// A continuación con string. Escoge la opción que quieras. La más fácil, y que también nos sirve, es la de arriba.
+		/*
+		function code_package(length) {
+			var result = '';
+			var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+			for (var i = 0; i < length; i++) {
+				result += characters.charAt(Math.floor(Math.random() * 1000000));
+			}
+			return result;
+		}
+		*/
+
 		const sqlInsertion = `start transaction;
         insert into package 
         (date_begin, date_end, code_package, user_id)

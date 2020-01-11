@@ -25,19 +25,23 @@ async function editAccount(req, res, next) {
 	}
 
 	try {
-		const securePassword = await bcrypt.hash(userData.password, 10);
+		const oldPassword = `select password from user where id = ${userId}`;
+		const confirmOldPassword = `insert into user (password) values ? is not null where id = ${userId}`;
+		if (oldPassword === confirmOldPassword) {
+			const securePassword = await bcrypt.hash(userData.password, 10);
 
-		const connection = await mysqlPool.getConnection();
-		const sqlEditAccount = `UPDATE user
-      SET password = ? is not null
-      WHERE id = ${userId}`;
+			const connection = await mysqlPool.getConnection();
+			const sqlEditAccount = `UPDATE user
+			SET password = ? is not null
+			WHERE id = ${userId}`;
 
-		await connection.query(sqlEditAccount, {
-			password: securePassword
-		});
-		connection.release();
+			await connection.query(sqlEditAccount, {
+				password: securePassword
+			});
+			connection.release();
 
-		return res.status(204).send('New password successfully registered');
+			return res.status(204).send('New password successfully registered');
+		}
 	} catch (e) {
 		console.error(e);
 		return res.status(500).send({
