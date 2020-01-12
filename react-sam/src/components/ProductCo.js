@@ -8,7 +8,7 @@ export function ProductCo({ defaultProduct = {}, onDeleteProduct }) {
   const [product, setProduct] = useState(defaultProduct);
 
   const { register, handleSubmit, setError } = useForm({
-    mode: 'onBlur' // Lanza validaciones cada vez que hago blur
+    mode: "onBlur"
   });
 
   const handleUpdate = formData => {

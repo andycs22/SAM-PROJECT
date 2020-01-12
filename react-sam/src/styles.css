@@ -28,6 +28,35 @@ body {
   height: 100%;
 }
 
+<<<<<<< HEAD
+.inputHidden{
+  display: none;
+}
+/* homepage */
+
+img.logo-homepage {
+  width: 30%;
+  margin: 2% 31% 0%;
+}
+section.photo-back {
+  margin-top: 2rem;
+  height: 100vh;
+  background-image: url('./assets/images/principal.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+section.photo-back h1 {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 35px;
+  letter-spacing: 0.75rem;
+  text-align: center;
+  color: #000000;
+  text-shadow: #ffffff 1px 1px 1px;
+  margin-bottom: 0;
+}
+
+=======
+>>>>>>> bafd13ab1e816fc3b6eaf9d52cc2d09eb9c71760
 /* header-nav */
 
 .header-nav nav img {
@@ -38,7 +67,7 @@ body {
   width: 100vw;
   top: 0;
   display: grid;
-  grid-template-columns: 1fr 3fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 3fr 1fr 1fr 1fr 1fr;
   grid-template-rows: auto;
   border-top: 1px solid black;
   border-bottom: 1px solid black;

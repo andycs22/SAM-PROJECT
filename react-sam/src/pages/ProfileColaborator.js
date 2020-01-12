@@ -29,9 +29,8 @@ export function ProfileColaborator() {
       <Header />
       <ul>
         <li>MODIFICAR CONTRASEÑA</li>
-        <li>
-          <Link to='/productCo'>GESTIONAR MIS PRODUCTOS</Link>
-        </li>
+        <li><Link to='/productCo'>GESTIONAR MIS PRODUCTOS</Link></li>
+        <li><Link to='/ordersHistory'>VER HISTORIAL DE PEDIDOS</Link></li>
         <li onClick={out}>CERRAR SESIÓN</li>
         <li onClick={delAccount}>ELIMINAR CUENTA</li>
       </ul>

@@ -36,6 +36,20 @@ export const REGISTER_VALIDATIONS = {
 };
 
 export const EDITPRODUCT_VALIDATIONS = {
+  theRest: {
+    required: "The theRest should be in place",
+    minLength: {
+      message: "por defecto",
+      value: 1
+    }
+  },
+  productId: {
+    required: "The id should be in place",
+    minLength: {
+      message: "por defecto",
+      value: 1
+    }
+  },
   init_price: {
     required: "The init_price should be in place",
     minLength: {

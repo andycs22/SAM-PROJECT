@@ -10,6 +10,7 @@ import user1 from "../assets/images/user1.svg";
 import addCart from "../assets/images/add-to-cart.svg";
 import spain from "../assets/images/spain.svg";
 import unitedK from "../assets/images/united-kingdom.svg";
+import pack from "../assets/images/caja.svg";
 
 export function Header() {
   const { role } = useAuth();
@@ -79,6 +80,13 @@ export function Header() {
             <img src={addCart} alt="carrito" />
           </Link>
         </button>
+        {role === 'organizer' && (
+          <button>
+            <Link to="/createPack">
+              <img src={pack} alt="pack" />
+            </Link>
+          </button>
+        )}
       </nav>
 
       <section data-name="submenu" className={submenu}>

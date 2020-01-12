@@ -6,5 +6,4 @@ export function orderF({ orderFinal }) {
 
 export function getOrder() {
   return axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/ordersHistory`);
-
 }
