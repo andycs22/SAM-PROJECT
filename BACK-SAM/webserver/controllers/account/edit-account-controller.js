@@ -1,5 +1,5 @@
 'use strict';
-
+// para que la contraseña no se pueda repetir, añade "unique" a password en la base de datos
 const mysqlPool = require('../../../database/mysql-pool');
 const Joi = require('@hapi/joi');
 
