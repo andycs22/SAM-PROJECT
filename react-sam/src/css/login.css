@@ -1,0 +1,107 @@
+.main-login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 13rem;
+  font-family: var(--ubuntu);
+}
+
+.form-login {
+  width: 300px;
+  padding: 15px;
+  margin-top: 2rem;
+  border-radius: 10px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-login img {
+  height: 70px;
+  width: auto;
+}
+
+/**/
+.group3 {
+  position: relative;
+  margin: 20px 0 20px 0;
+  width: 100%;
+}
+
+.group3 [name='email'],
+.group3 [name='password'] {
+  background: transparent;
+  font-size: 18px;
+  padding: 8px 0px 6px 5px;
+  display: block;
+  width: 90%;
+  border: none;
+  border-bottom: 1px solid var(--gris1);
+  resize: none;
+}
+
+.group3 [name='email']:focus,
+.group3 [name='password']:focus {
+  outline: none;
+  color: var(--azul1);
+  border-bottom: 2px solid #01496b;
+  transition: 0.5s ease all;
+}
+
+/* .group3 [name='email']:focus ~ label,
+.group3 [name='email']:valid ~ label,
+.group3 [name='password']:focus ~ label,
+.group3 [name='password']:valid ~ label {
+  position: absolute;
+  top: -10px;
+  font-size: 12px;
+  color: #c0e0fa;
+} */
+
+/* .form-login label {
+  color: black;
+  font-size: 16px;
+  position: absolute;
+  left: 5px;
+  top: 10px;
+  transition: 0.5s ease all;
+  pointer-events: none;
+} */
+
+/* .group3 [name='email']:focus ~ .bar::before,
+.group3 [name='password']:focus ~ .bar::before {
+  width: 100%;
+} */
+/* .bar {
+  position: relative;
+  display: block;
+  width: 95%;
+}
+.bar::before {
+  content: '';
+  height: 3px;
+  width: 0%;
+  bottom: 0;
+  position: absolute;
+  background: var(--gradiente);
+  transition: 0.3s ease all;
+  left: 0%;
+} */
+/**/
+
+.form-login .send-btn {
+  color: black;
+  margin-left: 2.5rem;
+}
+
+.register-link {
+  font-family: var(--rubik);
+  text-decoration: none;
+}
+
+.register-link:hover {
+  text-decoration: underline;
+  text-decoration-color: blue;
+}

@@ -93,7 +93,8 @@
 
 .group1,
 .group2 {
-  position: relative;
+  /*   position: relative;
+ */
   margin: 20px 0 20px 0;
   width: 100%;
 }

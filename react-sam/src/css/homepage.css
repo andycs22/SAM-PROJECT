@@ -1,20 +1,76 @@
-img.logo-homepage {
-  width: 30%;
-  margin: 2% 31% 0%;
+@import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One|Anton|Permanent+Marker|Seymour+One&display=swap');
+
+.main-homepage {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 100px 100px 300px;
+  grid-template-areas:
+    'imagen imagen'
+    'codigo codigo'
+    'eslogan resto';
 }
-section.photo-back {
-  margin-top: 2rem;
-  height: 100vh;
-  background-image: url('./assets/images/principal.png');
-  background-size: contain;
-  background-repeat: no-repeat;
+
+.title-homepage {
+  grid-area: eslogan;
+  padding-top: 5rem;
+  padding-left: 1rem;
 }
-section.photo-back h1 {
-  font-family: 'Ubuntu', sans-serif;
-  font-size: 35px;
-  letter-spacing: 0.75rem;
-  text-align: center;
-  color: #000000;
-  text-shadow: #ffffff 1px 1px 1px;
-  margin-bottom: 0;
+
+.image-discount {
+  grid-area: imagen;
+}
+
+.image-discount img {
+  height: auto;
+  width: 100vw;
+  max-width: 450px;
+}
+
+.code {
+  grid-area: codigo;
+  padding-left: 1rem;
+}
+
+.title-homepage h1 {
+  /* font-family: 'Anton', sans-serif; */
+  /* font-family: 'Seymour One', sans-serif; */
+  /* font-family: 'Permanent Marker', cursive; */
+  font-family: 'Alfa Slab One', cursive;
+  font-size: 30px;
+  letter-spacing: 0.2rem;
+  color: rgb(240, 158, 226);
+  -webkit-text-stroke: 2px rgb(158, 5, 94);
+}
+
+.title-homepage h2 {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 30px;
+  letter-spacing: 0.2rem;
+  color: rgb(255, 255, 255);
+  -webkit-text-stroke: 2px rgb(0, 0, 0);
+}
+
+.code {
+  width: 20%;
+}
+
+.code input {
+  background: rgb(227, 255, 175);
+  border-radius: 6px;
+}
+
+.btn-code {
+  padding-top: 0.25rem;
+  margin-top: 0.15rem;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.code button {
+  width: 180px;
+  background-color: rgb(82, 182, 82);
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-family: var(--rubik);
 }

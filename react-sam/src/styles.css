@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Rubik:400,500,700|Ubuntu:400,700&display=swap');
-@import url('/css/homepage.css');
+@import url('css/homepage.css');
 @import url('css/gestionar-productos.css');
 @import url('css/catalogue.css');
+@import url('css/login.css');
 @import url('css/about.css');
 @import url('css/footer.css');
 
@@ -28,8 +29,7 @@ body {
   height: 100%;
 }
 
-<<<<<<< HEAD
-.inputHidden{
+.inputHidden {
   display: none;
 }
 /* homepage */
@@ -55,8 +55,6 @@ section.photo-back h1 {
   margin-bottom: 0;
 }
 
-=======
->>>>>>> bafd13ab1e816fc3b6eaf9d52cc2d09eb9c71760
 /* header-nav */
 
 .header-nav nav img {

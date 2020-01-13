@@ -27,7 +27,9 @@ export function Footer() {
         </ul>
       </section>
       <section className='logo'>
-        <img src={logo} alt='logo' />
+        <Link to='/'>
+          <img src={logo} alt='logo' />
+        </Link>
       </section>
       <section className='elements'>
         <ul>
