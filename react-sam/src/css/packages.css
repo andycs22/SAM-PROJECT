@@ -18,14 +18,37 @@ border-bottom:1px solid #34495E;
   color: #34495E;
   text-align: center;
 }
-/* p.code-dat{
-  color: #34495E;
+div.packages-offered{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+ul.listPoPack li{
+  border-bottom: 1px solid #ffffff;
+  margin:1rem; 
+}
+ul.listPoPack .titP{
+  color: var(--azul2);
+  margin-right:0.5rem ;
+}
+img.imgPoPack{
+  width: 100%;
+}
+div#edit-prod-pack{
+  margin-top:4.5rem;
+  background: var(--azul2);
+  padding-bottom: 1rem;
+  border-radius:10px;
   text-align: center;
 }
-.code-date{
-  font-weight: 500;
+div#edit-prod-pack input{
+  margin-top: 1rem;
+  width: 90%;
+  margin-left: 1rem;
 }
-.grid-product{
-  display:grid;
-  grid-template-columns: auto auto auto;
-} */
+p.whi{
+  color:#ffffff;
+}
+div.product-co form.editForm button.red-btn{
+  color: #ffffff;
+}

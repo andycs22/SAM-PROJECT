@@ -1,0 +1,190 @@
+- MySQL Workbench Forward Engineering
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
+
+-- -----------------------------------------------------
+-- Schema mydb
+-- -----------------------------------------------------
+-- -----------------------------------------------------
+-- Schema SAMproject
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Schema SAMproject
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `SAMproject` DEFAULT CHARACTER SET latin1 ;
+USE `SAMproject` ;
+
+-- -----------------------------------------------------
+-- Table `SAMproject`.`user`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `SAMproject`.`user` (
+  `id` INT(20) NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(50) NULL DEFAULT NULL,
+  `surname` VARCHAR(50) NULL DEFAULT NULL,
+  `user_type` VARCHAR(20) NOT NULL,
+  `email` VARCHAR(50) NULL DEFAULT NULL,
+  `password` VARCHAR(60) NOT NULL,
+  `phone` VARCHAR(20) NULL DEFAULT NULL,
+  `birth_date` DATE NULL DEFAULT NULL,
+  `document_type` VARCHAR(20) NULL DEFAULT NULL,
+  `document_number` VARCHAR(20) NULL DEFAULT NULL,
+  `created_at` DATETIME NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `email` (`email` ASC))
+ENGINE = InnoDB
+AUTO_INCREMENT = 17
+DEFAULT CHARACTER SET = latin1;
+
+
+-- -----------------------------------------------------
+-- Table `SAMproject`.`product`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `SAMproject`.`product` (
+  `id` INT(20) NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(50) NULL DEFAULT NULL,
+  `category` VARCHAR(50) NULL DEFAULT NULL,
+  `description` VARCHAR(5000) NULL DEFAULT NULL,
+  `init_price` FLOAT(6,2) NULL DEFAULT NULL,
+  `discount` VARCHAR(10) NULL DEFAULT NULL,
+  `final_price` FLOAT(6,2) NULL DEFAULT NULL,
+  `photo` VARCHAR(1000) NULL DEFAULT NULL,
+  `user_id` INT(20) NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `user_id` (`user_id` ASC),
+  CONSTRAINT `product_ibfk_1`
+    FOREIGN KEY (`user_id`)
+    REFERENCES `SAMproject`.`user` (`id`)
+    ON DELETE CASCADE)
+ENGINE = InnoDB
+AUTO_INCREMENT = 15
+DEFAULT CHARACTER SET = latin1;
+
+
+-- -----------------------------------------------------
+-- Table `SAMproject`.`order_final`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `SAMproject`.`order_final` (
+  `id` VARCHAR(60) NOT NULL,
+  `price_final` INT(20) NULL DEFAULT NULL,
+  `order_date` DATE NULL DEFAULT NULL,
+  `user_id` INT(20) NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `user_id` (`user_id` ASC),
+  CONSTRAINT `order_final_ibfk_1`
+    FOREIGN KEY (`user_id`)
+    REFERENCES `SAMproject`.`user` (`id`)
+    ON DELETE CASCADE)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = latin1;
+
+
+-- -----------------------------------------------------
+-- Table `SAMproject`.`enter_product_order`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `SAMproject`.`enter_product_order` (
+  `id_product` INT(20) NOT NULL,
+  `id_order` VARCHAR(60) NOT NULL,
+  `quantity` INT(200) NULL DEFAULT NULL,
+  `price_at_order` INT(200) NULL DEFAULT NULL,
+  PRIMARY KEY (`id_product`, `id_order`),
+  INDEX `id_order` (`id_order` ASC),
+  CONSTRAINT `enter_product_order_ibfk_1`
+    FOREIGN KEY (`id_product`)
+    REFERENCES `SAMproject`.`product` (`id`)
+    ON DELETE CASCADE,
+  CONSTRAINT `enter_product_order_ibfk_2`
+    FOREIGN KEY (`id_order`)
+    REFERENCES `SAMproject`.`order_final` (`id`)
+    ON DELETE CASCADE)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = latin1;
+
+
+-- -----------------------------------------------------
+-- Table `SAMproject`.`package`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `SAMproject`.`package` (
+  `id` VARCHAR(60) NOT NULL,
+  `date_begin` DATE NULL DEFAULT NULL,
+  `date_end` DATE NULL DEFAULT NULL,
+  `code_package` VARCHAR(20) NOT NULL,
+  `user_id` INT(20) NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `user_id` (`user_id` ASC),
+  CONSTRAINT `package_ibfk_1`
+    FOREIGN KEY (`user_id`)
+    REFERENCES `SAMproject`.`user` (`id`)
+    ON DELETE CASCADE)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = latin1;
+
+
+-- -----------------------------------------------------
+-- Table `SAMproject`.`pay_method`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `SAMproject`.`pay_method` (
+  `id` INT(20) NOT NULL AUTO_INCREMENT,
+  `credit_card` VARCHAR(50) NULL DEFAULT NULL,
+  `transference` VARCHAR(100) NULL DEFAULT NULL,
+  `paypal` VARCHAR(100) NULL DEFAULT NULL,
+  `id_order` VARCHAR(60) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `id_order` (`id_order` ASC),
+  CONSTRAINT `pay_method_ibfk_1`
+    FOREIGN KEY (`id_order`)
+    REFERENCES `SAMproject`.`order_final` (`id`)
+    ON DELETE CASCADE)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = latin1;
+
+
+-- -----------------------------------------------------
+-- Table `SAMproject`.`product_include_package`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `SAMproject`.`product_include_package` (
+  `id_product` INT(20) NOT NULL,
+  `id_paq` VARCHAR(60) NOT NULL,
+  `paq_price` INT(20) NULL DEFAULT NULL,
+  `paq_disc` VARCHAR(20) NULL DEFAULT NULL,
+  PRIMARY KEY (`id_product`, `id_paq`),
+  INDEX `id_paq` (`id_paq` ASC),
+  CONSTRAINT `product_include_package_ibfk_1`
+    FOREIGN KEY (`id_product`)
+    REFERENCES `SAMproject`.`product` (`id`)
+    ON DELETE CASCADE,
+  CONSTRAINT `product_include_package_ibfk_2`
+    FOREIGN KEY (`id_paq`)
+    REFERENCES `SAMproject`.`package` (`id`)
+    ON DELETE CASCADE)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = latin1;
+
+
+-- -----------------------------------------------------
+-- Table `SAMproject`.`rate`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `SAMproject`.`rate` (
+  `user_id` INT(20) NOT NULL,
+  `id_product` INT(20) NOT NULL,
+  `comment_in_rate` VARCHAR(250) NULL DEFAULT NULL,
+  `value_in_rate` TINYINT(5) NULL DEFAULT NULL,
+  `date_comment` DATE NULL DEFAULT NULL,
+  PRIMARY KEY (`user_id`, `id_product`),
+  INDEX `id_product` (`id_product` ASC),
+  CONSTRAINT `rate_ibfk_1`
+    FOREIGN KEY (`user_id`)
+    REFERENCES `SAMproject`.`user` (`id`),
+  CONSTRAINT `rate_ibfk_2`
+    FOREIGN KEY (`id_product`)
+    REFERENCES `SAMproject`.`product` (`id`)
+    ON DELETE CASCADE)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = latin1;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;

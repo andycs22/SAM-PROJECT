@@ -44,7 +44,7 @@ function Confirmation() {
           <div>
             <p className='main-title'>Gracias por usar SAM</p>
             <div className='animation-cart'>
-              <Lottie options={{ animationData: noteData, ...defaultOptions }} />
+              <Lottie id='ani' options={{ animationData: noteData, ...defaultOptions }} />
             </div>
           </div>
         )}

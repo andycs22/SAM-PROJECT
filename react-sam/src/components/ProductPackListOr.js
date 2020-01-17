@@ -25,54 +25,56 @@ export function ProductPackListOr({ productsPack, selectedIndex, onProductSelect
       {productsPack.length > 0 && (
         <h3 className='code-list'>Selecciona para mas información</h3>
       )}
-      <ul className='product-list'>
-        {productsPack.map((productPack, index) => (
-          <li
-            key={productPack.id}
+      <div className='packages-offered'>
+        <ul className='product-list'>
+          {productsPack.map((productPack, index) => (
+            <li
+              key={productPack.id}
 
-          >
-            <div className={`product-item ${selectedIndex === index}`}>
-              <div>
-                <p>Código: {productPack.code_package}</p>
-                <p>Creado el: {(productPack.date_begin).substring(0, 10)}</p>
-                {((productPack.date_end).substring(0, 10) > today || (productPack.date_end).substring(0, 10) === today) && (
-                  <p>Valido hasta: {(productPack.date_end).substring(0, 10)}</p>
-                )}
-                {(productPack.date_end).substring(0, 10) < today && (
-                  <p>Caducado</p>
-                )}
-              </div>
-              <button onClick={() => {
-                onProductSelectedPack(productsPack[index]);
-                setIdPack(productsPack[index].id);
-                const getCode = productPack.code_package;
-                console.log(getCode);
-                return getCodePack({ getCode }).then(response => {
-                  setProductsInPack(response.data.data);
-                });
-              }}>
-                Ver productos de paquete
-                </button>
-            </div>
-          </li>
-        ))}
-      </ul>
-      <div>
-        {productsInPack !== undefined && (
-          <ul>
-            {productsInPack.map(productIP => (
-              <li key={productIP.id}>
+            >
+              <div className={`product-item ${selectedIndex === index}`}>
                 <div>
-                  <img src={productIP.photo} alt='productimage' />
-                  <p>{productIP.name}</p>
-                  <p>Precio catalogo: {productIP.old_price}€</p>
-                  <p>Descuento Adicional {productIP.discount} %</p>
-                  <p>Precio ofertado: {productIP.final_price}€</p>
+                  <p>Código: {productPack.code_package}</p>
+                  <p>Creado el: {(productPack.date_begin).substring(0, 10)}</p>
+                  {((productPack.date_end).substring(0, 10) > today || (productPack.date_end).substring(0, 10) === today) && (
+                    <p>Valido hasta: {(productPack.date_end).substring(0, 10)}</p>
+                  )}
+                  {(productPack.date_end).substring(0, 10) < today && (
+                    <p>Caducado</p>
+                  )}
                 </div>
-              </li>
-            ))}
-          </ul>
-        )}
+                <button className='white-btn' onClick={() => {
+                  onProductSelectedPack(productsPack[index]);
+                  setIdPack(productsPack[index].id);
+                  const getCode = productPack.code_package;
+                  console.log(getCode);
+                  return getCodePack({ getCode }).then(response => {
+                    setProductsInPack(response.data.data);
+                  });
+                }}>
+                  Ver productos de paquete
+                </button>
+              </div>
+            </li>
+          ))}
+        </ul>
+        <div>
+          {productsInPack !== undefined && (
+            <ul className='listPoPack'>
+              {productsInPack.map(productIP => (
+                <li key={productIP.id}>
+                  <div>
+                    <img className='imgPoPack' src={productIP.photo} alt='productimage' />
+                    <p>{productIP.name}</p>
+                    <p><span className='titP'>Precio catalogo: </span>{productIP.old_price}€</p>
+                    <p><span className='titP'>Descuento Adicional </span>{productIP.discount} %</p>
+                    <p><span className='titP'>Precio ofertado: </span>{productIP.final_price}€</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
       </div>
     </div >
   );

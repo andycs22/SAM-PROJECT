@@ -45,23 +45,25 @@ export function PackOr() {
       <Header />
       <main className='main-flex'>
         <h1 className='main-title top'>Paquetes publicados</h1>
-        <div className={`grid ${state.isProductPackOpened}`} />
-        <div>
-          <ProductPackListOr
-            productsPack={initialProductsPack}
-            selectedIndex={state.selectedProductPack}
-            onProductSelectedPack={i => {
-              selectProductPack(i);
-              dispatch({ type: 'TOGGLE_PRODUCT_PACK' });
-            }}
-          />
-        </div>
-        <div>
-          {state.selectedProductPack !== null && (
-            <ProductPackOr
-              defaultProductPack={state.selectedProductPack}
+        <div className='packages-offered'>
+          <div className={`grid ${state.isProductPackOpened}`} />
+          <div>
+            <ProductPackListOr
+              productsPack={initialProductsPack}
+              selectedIndex={state.selectedProductPack}
+              onProductSelectedPack={i => {
+                selectProductPack(i);
+                dispatch({ type: 'TOGGLE_PRODUCT_PACK' });
+              }}
             />
-          )}
+          </div>
+          <div>
+            {state.selectedProductPack !== null && (
+              <ProductPackOr
+                defaultProductPack={state.selectedProductPack}
+              />
+            )}
+          </div>
         </div>
       </main>
       <Footer />

@@ -25,8 +25,7 @@ export function ProductPackOr({ defaultProductPack = {} }) {
       <section className='productData'>
         <div>
           <h2>
-            Paquete:
-              <span className='code'>{defaultProductPack.code_package}</span>
+            <span className='code'>{defaultProductPack.code_package}</span>
           </h2>
         </div>
 
@@ -34,7 +33,8 @@ export function ProductPackOr({ defaultProductPack = {} }) {
 
       <form onSubmit={handleSubmit(handleUpdate)} className='editForm'>
         <div className='group1'>
-          <p>Fecha fin actual: {(defaultProductPack.date_end).substring(0, 10)}</p>
+          <p>Fecha fin actual:</p>
+          <p className='whi'>{(defaultProductPack.date_end).substring(0, 10)}</p>
           <label>Modifica la fecha de fin:</label>
           <input
             type='date'
@@ -42,7 +42,7 @@ export function ProductPackOr({ defaultProductPack = {} }) {
             ref={register(EDITPRODUCT_VALIDATIONS.init_price)}
           />
         </div>
-        <button type='submit' className='send-btn'>
+        <button className='red-btn' type='submit'>
           Guardar cambios
         </button>
       </form>

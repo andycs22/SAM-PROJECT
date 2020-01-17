@@ -1,6 +1,6 @@
 .animation {
-  /*   width: 400px;
- */
+    width: 400px;
+
 }
 
 .top div p {
@@ -9,4 +9,8 @@
 
 span .code {
   font-family: var(--rubik);
+}
+
+.animation-cart #ani{
+width: 50%;
 }

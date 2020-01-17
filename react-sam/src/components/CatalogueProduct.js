@@ -64,13 +64,13 @@ export function CatalogueProduct() {
 
   const showRates = () => {
     return (
-      <ul>
+      <ul className='comments-content'>
         {rate.map(r => (
           <li key={rate.id}>
-            <div>
-              <p>Puntuación: {r.value}</p>
-              <p>Fecha de comentario: {r.date}</p>
-              <p>Comentario: {r.comment}</p>
+            <div className='comments'>
+              <p> Puntuación:  <span className='anun'>{r.value}</span></p>
+              <p>Fecha de comentario: <span className='anun'>{r.date}</span></p>
+              <p>Comentario: <span className='anun'>{r.comment}</span></p>
             </div>
           </li>
         ))}
@@ -154,7 +154,7 @@ export function CatalogueProduct() {
               />
               <span className='bar'></span>
             </div>
-            <button className='red-btn' type='submit'>
+            <button className='red-btn' id='addP' type='submit'>
               Guardar y añadir a paquete
             </button>
           </form>

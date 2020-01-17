@@ -50,7 +50,9 @@
 .product-single .fprice {
   color: white;
 }
-
+div.group-btn button.red-btn{
+  color:#ffffff;
+}
 .group-btn {
   display: flex;
   flex-direction: column-reverse;
@@ -88,12 +90,23 @@
 .group-btn .send-btn:last-of-type {
   margin-bottom: 0;
 }
-
+p .anun{
+  color: var(--azul1);
+  margin-left: 0.5rem;
+}
+div.comments{
+  background: var(--azul2);
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+}
+ul.comments-content{
+  padding: 0;
+}
 /*Organizador*/
 .form-offer {
   width: 425px;
-  padding: 15px;
-  margin-top: 2rem;
+   margin-top: 2rem;
+   padding-top: 1rem;
   border-radius: 10px;
   background: white;
   display: flex;
@@ -117,7 +130,8 @@
   font-size: 18px;
   padding: 8px 0px 6px 5px;
   display: block;
-  width: 100%;
+  width: 340px;
+  margin-left: 3rem;
   border: none;
   border-bottom: 1px solid var(--gris1);
   resize: none;
@@ -131,16 +145,18 @@
 }
 
 .form-offer .red-btn {
-  color: black;
+  color: #ffffff;
 }
-
+button#addP{
+  color:var(--azul1);
+}
 @media (min-width: 900px) {
   .product-single img {
-    width: 800px;
+    width: 600px;
   }
 
   .description-prod {
-    width: 800px;
+    width: 600px;
   }
 
   .group-btn {
