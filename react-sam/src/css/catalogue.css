@@ -121,8 +121,8 @@ button#buttonFilters{
     flex-wrap: wrap;
   }
 
-  .catalogue-products li {
-    height: 400px;
+  .catalogue-products p.prod-description {
+    height: 70px;
   }
 
   .catalogue-products .prod-description {

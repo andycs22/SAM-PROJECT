@@ -32,15 +32,22 @@ function Confirmation() {
             <p>
               CODIGO GENERADO: <span className='code'>{code}</span>
             </p>
+            <button
+              className='btn-white'
+              onClick={() => window.location.reload()}
+            >Copiado
+            </button>
             <p>Gracias por usar SAM</p>
           </div>
         )}
         {code.length === 0 && (
-          <p className='main-title'>Gracias por comprar en SAM</p>
+          <div>
+            <p className='main-title'>Gracias por usar SAM</p>
+            <div className='animation-cart'>
+              <Lottie options={{ animationData: noteData, ...defaultOptions }} />
+            </div>
+          </div>
         )}
-        <div className='animation-cart'>
-          <Lottie options={{ animationData: noteData, ...defaultOptions }} />
-        </div>
         <button className='white-btn' onClick={goCatalogue}>
           Seguir comprando
         </button>

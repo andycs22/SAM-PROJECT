@@ -43,7 +43,7 @@ export function PackOr() {
   return (
     <React.Fragment>
       <Header />
-      <main className='top'>
+      <main className='main-flex'>
         <h1 className='main-title top'>Paquetes publicados</h1>
         <div className={`grid ${state.isProductPackOpened}`} />
         <div>
