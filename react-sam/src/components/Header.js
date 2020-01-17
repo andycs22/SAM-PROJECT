@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../shared/context/auth-context";
-
+import { useHistory } from 'react-router';
 import logo from "../assets/images/SAMlogotipo.png";
 import menu from "../assets/images/menu.svg";
 import user1 from "../assets/images/user1.svg";
@@ -11,6 +11,7 @@ import pack from "../assets/images/caja.svg";
 export function Header() {
   const { role } = useAuth();
   const [submenu, setSubmenu] = useState("");
+  const history = useHistory();
 
   const showSubMenu = () => {
     if (submenu === "show") {
@@ -36,10 +37,8 @@ export function Header() {
         </button>
         <Link to='/'> <img src={logo} alt="logo" id="logo" /></Link>
         {role === 'organizer' && (
-          <button>
-            <Link to="/createPack">
-              <img src={pack} alt="pack" />
-            </Link>
+          <button onClick={() => history.push('/createPack')}>
+            <img src={pack} alt="pack" />
           </button>
         )}
         <button className="login">

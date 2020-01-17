@@ -17,12 +17,12 @@ export function CatalogueProduct() {
   const { addItemToCart } = useCart();
   const { addItemToPack } = usePack();
   const { role } = useAuth();
+  const [productOffered, setProductOffered] = useState();
 
   const { register, handleSubmit, setError } = useForm({
     mode: 'onBlur'
   });
 
-  const [productOffered, setProductOffered] = useState();
 
   useEffect(() => {
     getCatalogueProduct(params.productId).then(response =>
@@ -81,26 +81,26 @@ export function CatalogueProduct() {
 
   const handleModif = formData => {
     console.log(formData);
-    setProductOffered(formData);
+    addItemToPack(formData);
   };
 
   return (
     <React.Fragment>
       <Header />
-      <div className='top'>
+      <div className='top' id='single-product'>
         <div className='product-single'>
           <img src={product[0].photo} alt='ip' />
           <section className='product-single-name'>
             <p>{product[0].name}</p>
           </section>
 
-          <p>
+          <div id='rate-line'>
             <span className='valoration-title'>Valoración media: </span>
-            {rateOfTheProduct()}{' '}
+            <span className='rate-p'>{rateOfTheProduct()}{' '}</span>
             {!isNaN(rateOfTheProduct()) && (
-              <button onClick={showRate}>Ver valoraciones</button>
+              <button id='btn-rate' onClick={showRate}>Ver valoraciones</button>
             )}
-          </p>
+          </div>
 
           <p className='description-prod'>{product[0].description}</p>
           <p>
@@ -155,7 +155,7 @@ export function CatalogueProduct() {
               <span className='bar'></span>
             </div>
             <button className='red-btn' type='submit'>
-              Guardar
+              Guardar y añadir a paquete
             </button>
           </form>
         )}
@@ -169,14 +169,6 @@ export function CatalogueProduct() {
           >
             Volver
           </a>
-          {role === 'organizer' && (
-            <button
-              className='red-btn'
-              onClick={() => addItemToPack(productOffered)}
-            >
-              Añadir a paquete
-            </button>
-          )}
           <button className='red-btn' onClick={() => addItemToCart(product[0])}>
             Añadir al carrito
           </button>

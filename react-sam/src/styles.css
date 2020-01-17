@@ -28,7 +28,9 @@
   --rubik: 'Rubik', sans-serif;
   --arial: ;
 }
-
+main.main-flex{
+  flex-grow: 1;
+}
 #root main form div input,
 #root main form div textarea{
   color:var(--azul1);
@@ -52,7 +54,9 @@ div#root {
   flex-direction: column;
 }
 
-/* QUITAME DE AQUI */
+div.line{
+  display: inline-flex;
+}
 
 .product-co {
   flex-grow: 1;

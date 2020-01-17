@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router';
 import { usePack } from '../shared/context/package-context';
 import { Link } from 'react-router-dom';
@@ -17,7 +17,7 @@ export function CreatePack() {
     removeItem,
     code,
     setCode,
-    resetPack
+    resetPack,
   } = usePack();
 
   console.log(pack);
@@ -36,14 +36,13 @@ export function CreatePack() {
       console.log(date_end);
       const createP = { order, date_end };
       console.log(createP);
-      history.push('/confirmation');
       return createPack({ createP })
         .then(response => {
           console.log(response.data);
           setCode(response.data);
         })
         .then(resetPack())
-        .then(window.location.reload())
+        .then(history.push('/confirmation'))
         .catch(error => {
           console.log(error);
           setError(false);
@@ -56,59 +55,60 @@ export function CreatePack() {
   return (
     <React.Fragment>
       <Header />
-      <main className='create-pack top'>
-        <h1 className='main-title top'>Generando un paquete</h1>
+      <main className='main-flex top'>
+        <h1 className='main-title'>Generando un paquete</h1>
+        <section className='create-pack'>
+          {totalItems === 0 && (
+            <React.Fragment>
+              <h2 className='code-list'>No hay productos seleccionados</h2>
+            </React.Fragment>
+          )}
+          {totalItems > 0 && (
+            <React.Fragment>
+              <h2 className='code-list'>Precios especiales:</h2>
+              <ul>
+                {pack.map(item => (
+                  <li key={item.id}>
+                    <p>
+                      <span>{item.name}</span>
+                      <span>{` ${item.oldPrice}€ `}</span>
+                      <span>{`- ${item.discount}% `}</span>
+                      <span>{`-> ${item.newPrice}€  `}</span>
 
-        {totalItems === 0 && (
-          <React.Fragment>
-            <h2 className='code-list'>No hay productos seleccionados</h2>
-          </React.Fragment>
-        )}
-        {totalItems > 0 && (
-          <React.Fragment>
-            <h2 className='code-list'>Precios especiales:</h2>
-            <ul>
-              {pack.map(item => (
-                <li key={item.id}>
-                  <p>
-                    <span>{item.name}</span>
-                    <span>{` ${item.oldPrice}€ `}</span>
-                    <span>{`- ${item.discount}% `}</span>
-                    <span>{`-> ${item.newPrice}€  `}</span>
+                      <button
+                        className='trash'
+                        onClick={e => {
+                          e.preventDefault();
+                          removeItem(item);
+                        }}
+                      ></button>
+                    </p>
+                  </li>
+                ))}
+              </ul>
+              <div className='group1'>
+                <label>Paquete valido hasta:</label>
+                <input
+                  type='date'
+                  name='expirationDate'
+                  onChange={expDate}
+                  required
+                />
+                <span className='bar'></span>
 
-                    <button
-                      className='trash'
-                      onClick={e => {
-                        e.preventDefault();
-                        removeItem(item);
-                      }}
-                    ></button>
-                  </p>
-                </li>
-              ))}
-            </ul>
-            <div className='group1'>
-              <label>Paquete valido hasta:</label>
-              <input
-                type='date'
-                name='expirationDate'
-                onChange={expDate}
-                required
-              />
-              <span className='bar'></span>
-
-              {error && <p>Debe introducir una fecha de validez</p>}
-            </div>
-            <p>Total price = {`${totalPrice}€`}</p>
-            <button className='red-btn' onClick={buy}>
-              GENERAR PAQUETE
+                {error && <p>Debe introducir una fecha de validez</p>}
+              </div>
+              <p>Total price = {`${totalPrice}€`}</p>
+              <button className='red-btn' onClick={buy}>
+                GENERAR PAQUETE
             </button>
-          </React.Fragment>
-        )}
-        {code.length > 0 && <p>Codigo: {code}</p>}
-        <Link to='/catalogue'>
-          <button className='white-btn'>Volver al catalogo</button>
-        </Link>
+            </React.Fragment>
+          )}
+          {code.length > 0 && <p>Codigo: {code}</p>}
+          <Link to='/catalogue'>
+            <button className='white-btn'>Volver al catalogo</button>
+          </Link>
+        </section>
       </main>
       <Footer />
     </React.Fragment>

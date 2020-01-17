@@ -70,3 +70,30 @@ select#document_type {
   transition: 0.3s ease all;
   left: 0%;
 }
+
+button#btn-rate{
+background: #ffffff;
+color:var(--azul1);
+border-radius:5px;
+margin-left: 1rem;
+}
+div#single-product{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+div#rate-line{
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: row;
+}
+.rate-p{
+  color: var(--azul2);
+  font-weight: 600;
+  font-size:2rem;
+  margin-left: 1rem;
+}
+.valoration-title{
+  align-self: flex-end;
+}
