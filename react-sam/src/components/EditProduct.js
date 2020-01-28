@@ -1,10 +1,12 @@
 import React, { useEffect, useReducer } from 'react';
+import { useHistory } from 'react-router';
 import { getProductCo } from '../http';
 import { deleteProduct } from '../http/ProductService';
 import { ProductListCo } from './ProductListCo';
 import { ProductCo } from './ProductCo';
 
 function productsReducer(state, action) {
+
   switch (action.type) {
     case 'GET_PRODUCTS':
       return { ...state, products: action.initialProducts };
@@ -23,6 +25,7 @@ function productsReducer(state, action) {
 }
 
 export function EditProduct() {
+  const history=useHistory();
   const [state, dispatch] = useReducer(productsReducer, {
     products: [],
     selectedProduct: null,
@@ -54,6 +57,7 @@ export function EditProduct() {
     <React.Fragment>
       <main>
         <div className={`grid ${state.isProductOpened}`} />
+        <div className='packages-offered'>
         <div>
           <ProductListCo
             products={initialProducts}
@@ -72,9 +76,13 @@ export function EditProduct() {
             />
           )}
         </div>
+        </div>
         <button
           className='white-btn'
-          onClick={() => dispatch({ type: 'TOGGLE_PRODUCT' })}
+          onClick={() => {
+            dispatch({ type: 'TOGGLE_PRODUCT' });
+            history.goBack();
+          }}
         >
           Volver
         </button>

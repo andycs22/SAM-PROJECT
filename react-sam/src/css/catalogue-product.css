@@ -79,7 +79,7 @@ div.group-btn button.red-btn{
 .group-btn a {
   background-color: none;
   color: white;
-  border: none;
+  border: 1px solid #ffffff;
 }
 
 .group-btn a:hover {
@@ -97,14 +97,18 @@ p .anun{
 div.comments{
   background: var(--azul2);
   border-radius: 10px;
+  border: 1px solid #ffffff;
   padding: 0.5rem 1rem;
 }
 ul.comments-content{
   padding: 0;
 }
+ul.comments-content li{
+  margin: 1rem;
+}
 /*Organizador*/
 .form-offer {
-  width: 425px;
+  width: 400px;
    margin-top: 2rem;
    padding-top: 1rem;
   border-radius: 10px;
@@ -120,8 +124,8 @@ ul.comments-content{
   color: var(--azul1);
 }
 
-.form-offer .group3 label {
-  margin-left: 7rem;
+.form-offer .group1 {
+  margin-left: 2rem;
 }
 
 .group3 [name='discount'],

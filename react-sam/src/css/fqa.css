@@ -16,8 +16,13 @@ section.FAQ li {
   padding: 0.5rem 0;
   text-align: center;
 }
+section.FAQ a{
+  color: #ffffff;
+  font-family: var(--ubuntu);
+  font-size: 1.2rem;
+}
 section.FAQ li p {
-  color: #000000;
+  color: var(--azul2);
 }
 section.FAQ .hidden {
   display: none;

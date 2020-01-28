@@ -34,7 +34,7 @@ export function ProductPackListOr({ productsPack, selectedIndex, onProductSelect
             >
               <div className={`product-item ${selectedIndex === index}`}>
                 <div>
-                  <p>Código: {productPack.code_package}</p>
+                  <p>Código: <span className='code2'>{productPack.code_package}</span></p>
                   <p>Creado el: {(productPack.date_begin).substring(0, 10)}</p>
                   {((productPack.date_end).substring(0, 10) > today || (productPack.date_end).substring(0, 10) === today) && (
                     <p>Valido hasta: {(productPack.date_end).substring(0, 10)}</p>

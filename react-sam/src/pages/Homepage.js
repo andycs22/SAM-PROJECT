@@ -1,13 +1,8 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
-import discount from '../assets/images/BANNER-DESCUENTO.svg';
-import demo1 from '../assets/images/demo1.jpg';
-import demo2 from '../assets/images/demo2.jpg';
-import demo3 from '../assets/images/demo3.jpg';
 import catalogoSAM from '../assets/images/catalogoSAM.png';
-
 import { useHistory } from 'react-router';
 
 export function Homepage() {

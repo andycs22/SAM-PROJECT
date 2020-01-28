@@ -66,35 +66,38 @@ export function Register() {
           >
             <option value={type}></option>
           </select>
-          <div className='group4'>
-            <label>Nombre / Razón social:</label>
-            <input type='text' name='name' ref={register({})} />
+          <div className='group1'>
+            <input type='text' name='name' ref={register({})} required/>
+            <span className='bar'></span>
+            <label className='label'>Nombre / Razón social:</label>
           </div>
-          <div className='only-buyer'>
-            <label>Apellidos:</label>
-            <input type='text' name='surname' ref={register({})} />
+          <div className='group1'>
+            <input type='text' name='surname' ref={register({})} placeholder='Apellidos'/>
+            <span className='bar'></span>
           </div>
-          <div className='group4' id='span-mail'>
-            <label>Email:</label>
+          <div className='group1' id='span-mail'>
             <input
               type='email'
               name='email'
               id='email'
               ref={register(REGISTER_VALIDATIONS.email)}
-            />
-            <span>{errors.email && errors.email.message}</span>
+              required
+              />
+            <span className='bar'>{errors.email && errors.email.message}</span>
+              <label className='label'>Email:</label>
           </div>
-          <div className='group4'>
-            <label>Contraseña:</label>
+          <div className='group1'>
             <input
               type='password'
               name='password'
               id='password'
               ref={register({})}
             />
+            <span className='bar'></span>
+            <label className='label'>Contraseña:</label>
           </div>
-          <div className='doc'>
-            <label>Documento:</label>
+          <div className='group1'>
+            <label className='label-docu'>Documento:</label>
             <select name='document_type' id='document_type' ref={register({})}>
               <option value='dni'>DNI</option>
               <option value='nie'>NIE</option>
@@ -106,8 +109,9 @@ export function Register() {
               id='document_number'
               ref={register({})}
             />
+            <span className='bar'></span>
           </div>
-          <div className='only-buyer'>
+          <div className='group1'>
             <label>Fecha de nacimiento:</label>
             <input
               type='date'
@@ -115,10 +119,12 @@ export function Register() {
               id='birth_date'
               ref={register({})}
             />
+            <span className='bar'></span>
           </div>
-          <div className='group4'>
-            <label>Teléfono:</label>
-            <input type='phone' name='phone' id='phone' ref={register({})} />
+          <div className='group1'>
+            <input type='phone' name='phone' id='phone' ref={register({})} required/>
+            <span className='bar'></span>
+          <label className='label'>Teléfono:</label>
           </div>
           <button
             className='red-btn'

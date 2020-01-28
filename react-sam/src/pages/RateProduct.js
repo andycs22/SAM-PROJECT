@@ -17,6 +17,7 @@ export function RateProduct() {
     console.log(formData);
     return rate(formData, productId)
       .then(response => alert(response.data))
+      .then (history.push('/catalogue'))
       .catch(error => {
         alert('ya ha valorado este producto con anterioridad');
         setError(error);

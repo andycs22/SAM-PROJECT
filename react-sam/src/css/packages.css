@@ -14,9 +14,16 @@ ul.product-list li{
   padding: 0.5rem 1rem;
 border-bottom:1px solid #34495E;
 }
-.code-list{
-  color: #34495E;
-  text-align: center;
+h3.code-list{
+  color: #ffffff;
+  font-size: 1.5rem;
+  align-self:start;
+  padding-left: 1.1rem;
+  font-family: var(--ubuntu);
+}
+.code2{
+  font-size: 1.5rem;
+  color:var(--rojo1);
 }
 div.packages-offered{
   display: flex;
@@ -35,11 +42,13 @@ img.imgPoPack{
   width: 100%;
 }
 div#edit-prod-pack{
-  margin-top:4.5rem;
+  margin-top:5.5rem;
+  margin-left: 1rem;
   background: var(--azul2);
   padding-bottom: 1rem;
   border-radius:10px;
   text-align: center;
+  color:#ffffff;
 }
 div#edit-prod-pack input{
   margin-top: 1rem;
@@ -47,7 +56,7 @@ div#edit-prod-pack input{
   margin-left: 1rem;
 }
 p.whi{
-  color:#ffffff;
+  color:var(--rojo1);
 }
 div.product-co form.editForm button.red-btn{
   color: #ffffff;

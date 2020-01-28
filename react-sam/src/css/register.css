@@ -65,43 +65,9 @@
   align-items: center;
 }
 
-.group4,
-.only-buyer,
-.doc {
+label.label-docu{
   position: relative;
-  margin: 15px 0 18px 0;
-  width: 100%;
-}
-
-.form-register label {
-  margin-left: 16px;
-  color: var(--azul1);
-}
-
-.group4 input,
-.only-buyer input,
-#document_number {
-  background: transparent;
-  font-size: 18px;
-  display: block;
-  width: 90%;
-  border: none;
-  border-bottom: 1px solid var(--gris1);
-  resize: none;
-  margin-left: 1rem;
-}
-
-.group4 span {
-  margin-left: 1rem;
-}
-
-.group4 input:focus,
-.only-buyer input:focus,
-#document_number:focus {
-  outline: none;
-  color: var(--azul1);
-  border-bottom: 2px solid #01496b;
-  transition: 0.5s ease all;
+  top:1rem;
 }
 
 #span-mail {
@@ -114,7 +80,6 @@ select#document_type {
 }
 
 input#document_number {
-  width: 315px;
   margin-right: 0.8rem;
 }
 
@@ -131,8 +96,11 @@ input#birth_date {
 #send {
   margin-top: 0.75rem;
   color: black;
+  background-color: var(--rojo1);
 }
-
+#send:hover{
+  color: #ffffff;
+}
 .cancel a {
   color: var(--azul1);
 }

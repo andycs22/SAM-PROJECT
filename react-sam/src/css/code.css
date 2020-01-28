@@ -2,7 +2,6 @@ main#main-code{
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 main#main-code form#show-code-pack{
@@ -12,6 +11,10 @@ button#button-code{
 color:var(--azul1);
 padding: 1rem 0;
 margin: 0 2rem 1rem 0;
+background: var(--rojo1);
+}
+form#show-code-pack{
+  margin-top:3rem;
 }
 form#show-code-pack form.form-catalogue-filters{
   padding: 0;

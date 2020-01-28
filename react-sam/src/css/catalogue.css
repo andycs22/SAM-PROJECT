@@ -41,6 +41,7 @@ button#buttonFilters{
   width: 200px;
   margin: 1rem 0;
   color: var(--azul1);
+background: #fd5c5c;
 }
 .catalogue-filter .bar::before {
   content: '';
@@ -56,15 +57,17 @@ button#buttonFilters{
 .catalogue-products {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   max-width: 80%;
+  margin-top: 0.35rem;
+
 }
 
 .catalogue-products li {
   width: 400px;
   height: auto;
-  margin: 0.35rem;
+  margin-bottom: 2rem;
   flex: grid;
   grid-template-rows: 240px 50px 160px 60px;
   background-color: rgb(255, 255, 255);
@@ -97,6 +100,8 @@ button#buttonFilters{
     justify-self: center;
     align-self: start;
     padding-top: 2.4rem;
+    top:3rem;
+    position: sticky;
   }
 
   select#category {
@@ -115,6 +120,7 @@ button#buttonFilters{
   .catalogue-products ul {
     grid-area: products;
     align-self: start;
+    justify-content: space-around;
     padding-top: 1rem;
     display: flex;
     flex-direction: row;

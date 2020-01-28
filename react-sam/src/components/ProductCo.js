@@ -76,7 +76,7 @@ export function ProductCo({ defaultProduct = {}, onDeleteProduct }) {
         }}
         className='red-btn'
       >
-        <a href='/'></a>Borrar
+        <a href='/'></a>Eliminar oferta
       </button>
     </div>
   );
