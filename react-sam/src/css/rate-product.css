@@ -97,11 +97,28 @@ div#rate-line{
   align-items: flex-end;
 }
 .rate-p{
-  color: var(--azul2);
+  color: yellow;
   font-weight: 600;
   font-size:2rem;
   margin-left: 1rem;
 }
 .valoration-title{
   align-self: flex-end;
+}
+div.products-order-history button.red-btn,
+form.form-rate button#send{
+  background-color: var(--rojo1);
+  color:#ffffff;
+}
+div.products-order-history button.white-btn,
+main.main-rate a.white-btn{
+  background-color: #ffffff;
+  color: black;
+}
+div.products-order-history button.red-btn:hover,
+div.products-order-history button.white-btn:hover,
+form.form-rate button#send,
+main.main-rate a.white-btn{
+  font-weight: 500;
+  letter-spacing: 2.5px;
 }

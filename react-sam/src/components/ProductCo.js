@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import useForm from 'react-hook-form';
 import { updateProduct } from '../http/ProductService';
 import { EDITPRODUCT_VALIDATIONS } from '../shared/validations';
-
+import {useHistory} from 'react-router';
 export function ProductCo({ defaultProduct = {}, onDeleteProduct }) {
   console.log(defaultProduct);
   const [product, setProduct] = useState(defaultProduct);
@@ -10,13 +10,14 @@ export function ProductCo({ defaultProduct = {}, onDeleteProduct }) {
   const { register, handleSubmit, setError } = useForm({
     mode: 'onBlur'
   });
-
+const history=useHistory();
   const handleUpdate = formData => {
     console.log(formData);
     const idProduct = product.id;
     console.log(idProduct);
     return updateProduct(idProduct, formData)
-      .then(response => alert(response.data))
+    .then(response => alert(response.data))
+    .then(history.push('/personalAccount'))
       .catch(error => {
         setError(error);
       });
@@ -72,7 +73,9 @@ export function ProductCo({ defaultProduct = {}, onDeleteProduct }) {
       <button
         onClick={e => {
           e.preventDefault();
-          onDeleteProduct(product.id);
+          onDeleteProduct(product.id)
+          .then(window.location.reload())
+          .then(alert('producto eliminado de la oferta'));
         }}
         className='red-btn'
       >

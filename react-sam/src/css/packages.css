@@ -14,6 +14,9 @@ ul.product-list li{
   padding: 0.5rem 1rem;
 border-bottom:1px solid #34495E;
 }
+h2.code-list{
+  color: var(--rojo1);
+}
 h3.code-list{
   color: #ffffff;
   font-size: 1.5rem;
@@ -30,12 +33,19 @@ div.packages-offered{
   flex-direction: row;
   justify-content: center;
 }
+div.packages-offered button.white-btn{
+  color:black;
+  background-color: #ffffff;
+}
+div.packages-offered button.white-btn:hover{
+  font-weight: 500;
+}
 ul.listPoPack li{
   border-bottom: 1px solid #ffffff;
   margin:1rem; 
 }
 ul.listPoPack .titP{
-  color: var(--azul2);
+  color: aquamarine;
   margin-right:0.5rem ;
 }
 img.imgPoPack{
@@ -60,4 +70,5 @@ p.whi{
 }
 div.product-co form.editForm button.red-btn{
   color: #ffffff;
+  border: none;
 }

@@ -52,6 +52,12 @@
 }
 div.group-btn button.red-btn{
   color:#ffffff;
+  background-color: var(--rojo1);
+}
+div.group-btn button.red-btn:hover,
+.group-btn a:hover{
+  letter-spacing: 2.5px;
+  font-weight: 500;
 }
 .group-btn {
   display: flex;
@@ -61,7 +67,7 @@ div.group-btn button.red-btn{
 }
 
 .group-btn a {
-  background: transparent;
+  background-color: #ffffff;
   border-radius: 6px;
   border: none;
   color: black;
@@ -76,29 +82,25 @@ div.group-btn button.red-btn{
   text-decoration: none;
   text-transform: uppercase;
 }
-.group-btn a {
-  background-color: none;
-  color: white;
-  border: 1px solid #ffffff;
-}
 
-.group-btn a:hover {
-  background-color: #f1f3ce;
-  color: black;
-}
 
 .group-btn .send-btn:last-of-type {
   margin-bottom: 0;
 }
 p .anun{
-  color: var(--azul1);
+  color: #f1f3ce;
   margin-left: 0.5rem;
+  font-weight: 400;
 }
 div.comments{
   background: var(--azul2);
   border-radius: 10px;
   border: 1px solid #ffffff;
   padding: 0.5rem 1rem;
+}
+div.comments p{
+  font-weight: 500;
+  color: aquamarine;
 }
 ul.comments-content{
   padding: 0;
@@ -121,13 +123,15 @@ ul.comments-content li{
 }
 
 .form-offer h2 {
-  color: var(--azul1);
+  color: var(--azul2);
 }
 
 .form-offer .group1 {
   margin-left: 2rem;
 }
-
+.form-offer .group1 input{
+  color: var(--azul2);
+}
 .group3 [name='discount'],
 .group3 [name='newPrice'] {
   background: transparent;
@@ -153,6 +157,13 @@ ul.comments-content li{
 }
 button#addP{
   color:var(--azul1);
+  background-color: var(--rojo1);
+  color: #ffffff;
+}
+button#addP:hover{
+  margin-left:0;
+  margin-right: 0;
+  letter-spacing: 2.5px;
 }
 @media (min-width: 900px) {
   .product-single img {

@@ -15,10 +15,20 @@ section button.bto-product{
   background-color: #ffffff;
   color: #34495e;
 }
-section button.bto-product:hover{
-  border: 1px solid #34495e;
+section.product-co main button.white-btn{
+  color: black;
+  background-color: #ffffff;
+}
+section button.bto-product:hover,
+section.product-co main button.white-btn:hover{
+  letter-spacing: 2.5px;
+  font-weight: 500;
 }
 /* Crear producto */
+form#createProduct input,
+form#createProduct textarea#description{
+  color:var(--azul1);
+}
 form.form-create-product{
   width: 400px;
 }
@@ -38,6 +48,11 @@ form.form-create-product h2{
 }
 button#sendProdcut{
   background-color: var(--rojo1);
+  color:#ffffff;
+}
+button#sendProdcut:hover{
+  font-weight: 500;
+  letter-spacing: 2.5px;
 }
 /*Editar Producto*/
 .list-products-co{
@@ -64,10 +79,17 @@ button#sendProdcut{
   width: 340px;
   background-color: var(--azul2);
   border-radius:10px;
-  color:var(--azul1);
+  color:aquamarine;
   font-weight: 800;
 }
-
+#edit-prod button.red-btn{
+ background-color: var(--rojo1); 
+ color:#ffffff;
+}
+#edit-prod button.red-btn:hover{
+  font-weight: 500;
+  letter-spacing: 2.5px;
+}
 .imageData {
   justify-self: center;
 }

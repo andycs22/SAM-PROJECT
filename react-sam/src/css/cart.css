@@ -86,7 +86,18 @@ p button.minus {
   width: 420px;
   border-bottom: 2px solid var(--rojo1);
 }
-
+section.cart-main button.red-btn{
+  background-color: var(--rojo1);
+}
+section.cart-main button.white-btn{
+  color: black;
+  background-color: #ffffff;
+}
+section.cart-main button.red-btn:hover,
+section.cart-main button.white-btn:hover{
+  letter-spacing: 2.5px;
+  font-weight: 500;
+}
 @media (min-width: 900px) {
   .cart-detail ul li p {
     display: grid;

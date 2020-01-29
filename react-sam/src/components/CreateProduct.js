@@ -4,9 +4,10 @@ import { createProductCo } from '../http/ProductService';
 export function CreateProduct() {
   const handleFormSubmit = e => {
     e.preventDefault();
-    createP().then(response => {
+    createP()
+    .then(response => {
       console.log(response.data);
-    });
+    })
   };
 
   const createP = () => {
@@ -18,7 +19,8 @@ export function CreateProduct() {
       }
     };
     return createProductCo(formData, config)
-      .then(window.location.reload());
+    .then(window.location.reload())
+    .then(alert('producto publicado'))
   };
 
   return (

@@ -1,4 +1,6 @@
-
+main.personal{
+  flex-grow: 1;
+}
 .main-personalAccount div.ul{
   display: flex;
   flex-direction: column;
@@ -8,6 +10,8 @@
 
 .main-personalAccount div.ul {
   padding-left: 0;
+  letter-spacing: 2px;
+
 }
 
 .main-personalAccount div.ul a,
@@ -24,6 +28,8 @@
 .main-personalAccount div.ul a:hover,
 .main-personalAccount div.ul div:hover {
   color: black;
+  letter-spacing: 3px;
+  font-weight: 500;
   background-color: white;
   border-radius: 6px;
   transition: 0.5s;
