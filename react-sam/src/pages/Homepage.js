@@ -1,10 +1,12 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import banner from '../assets/images/banner2.jpg'
 import { Slider } from '../components/Slider';
 import { Cards} from '../components/Cards';
+import catalogoSAM from '../assets/images/catalogoSAM.png';
+
 import { useHistory } from 'react-router';
 
 

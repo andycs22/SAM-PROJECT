@@ -11,10 +11,10 @@ async function getOrder(req, res, next) {
         from product p
         inner join enter_product_order eproo
         on p.id = eproo.id_product 
-        inner join order_final of
-        on eproo.id_order = of.id
+        inner join order_final orf
+        on eproo.id_order = orf.id
         inner join user us
-        on of.user_id = us.id
+        on orf.user_id = us.id
         where us.id=${userId}`
 
         const connection = await mysqlPool.getConnection();

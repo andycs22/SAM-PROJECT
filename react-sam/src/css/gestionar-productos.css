@@ -11,18 +11,55 @@
   letter-spacing: 0.22rem;
   text-align: center;
 }
-
-/*Formulario*/
-
-.form-create-product {
+section button.bto-product{
+  background-color: #ffffff;
+  color: #34495e;
+}
+section.product-co main button.white-btn{
+  color: black;
+  background-color: #ffffff;
+}
+section button.bto-product:hover,
+section.product-co main button.white-btn:hover{
+  letter-spacing: 2.5px;
+  font-weight: 500;
+}
+/* Crear producto */
+form#createProduct input,
+form#createProduct textarea#description{
+  color:var(--azul1);
+}
+form.form-create-product{
+  width: 400px;
+}
+form.form-create-product h2{
+  color: var(--azul1);
+}
+.group1 select#category{
+  margin-left: 1rem;
+}
+.group1 input#photo{
+  border:none;
+  margin-top:1rem;
+  padding: 0;
+}
+.group1 input#photo{
+  font-size: 14px;
+}
+button#sendProdcut{
+  background-color: var(--rojo1);
+  color:#ffffff;
+}
+button#sendProdcut:hover{
+  font-weight: 500;
+  letter-spacing: 2.5px;
+}
+/*Editar Producto*/
+.list-products-co{
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: center;
-  max-width: 425px;
 }
-
-/*Editar Producto*/
 .list-products-co h2 {
   text-align: center;
 }
@@ -34,36 +71,60 @@
 }
 
 #edit-prod {
+  margin: 1.6rem 0 0 1.2rem;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 180px 1fr 300px 120px;
   max-width: 800px;
+  width: 340px;
+  background-color: var(--azul2);
+  border-radius:10px;
+  color:aquamarine;
+  font-weight: 800;
 }
-
+#edit-prod button.red-btn{
+ background-color: var(--rojo1); 
+ color:#ffffff;
+}
+#edit-prod button.red-btn:hover{
+  font-weight: 500;
+  letter-spacing: 2.5px;
+}
 .imageData {
   justify-self: center;
 }
 
 .productData {
   justify-self: flex-start;
-  padding: 0 0.75rem 0 0.75rem;
+  padding: 0 3.3rem;
 }
 
 .productData p {
   color: white;
   font-style: italic;
+  font-weight: 400;
 }
 
 .editForm {
   justify-self: center;
+  padding: 1rem 0 0 1.2rem;
 }
-/* .send-btn {
-  justify-self: center;
-} */
-
+#edit-prod form.editForm div.group1 input{
+  color: #ffffff;
+}
+.editForm button.white-btn{
+  margin-left: 0;
+}
+#edit-prod button.red-btn{
+  margin:3.5rem;
+}
 .delete-btn {
   justify-self: center;
   align-self: center;
+}
+h2.title-edit-product{
+  color:var(--rojo1);
+  margin-bottom: 2rem;
 }
 
 @media (min-width: 450px) {

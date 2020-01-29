@@ -4,9 +4,10 @@ import { createProductCo } from '../http/ProductService';
 export function CreateProduct() {
   const handleFormSubmit = e => {
     e.preventDefault();
-    createP().then(response => {
+    createP()
+    .then(response => {
       console.log(response.data);
-    });
+    })
   };
 
   const createP = () => {
@@ -18,13 +19,14 @@ export function CreateProduct() {
       }
     };
     return createProductCo(formData, config)
-      .then(window.location.reload());
+    .then(window.location.reload())
+    .then(alert('producto publicado'))
   };
 
   return (
     <form
       onSubmit={handleFormSubmit}
-      className='form-create-product'
+      className='form-create-product form-register'
       id='createProduct'
       name='createProduct'
     >
@@ -47,8 +49,8 @@ export function CreateProduct() {
         <span className='bar'></span>
         <label className='label'>Descripción</label>
       </div>
-      <div className='group2'>
-        Categoría
+      <div className='group1'>
+      <label> Categoría:   </label>
         <select name='category' id='category' required>
           <option value=''>Seleccionar</option>
           <option value='admin'>Administración</option>
@@ -56,8 +58,8 @@ export function CreateProduct() {
           <option value='developer'>Desarrollo</option>
         </select>
       </div>
-      <div className='group2'>
-        Imagen
+      <div className='group1'>
+        <label>Imagen: </label>
         <input type='file' name='photo' id='photo' />
       </div>
       <div className='group1'>

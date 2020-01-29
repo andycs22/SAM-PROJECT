@@ -96,7 +96,7 @@ export function CreatePack() {
                 />
                 <span className='bar'></span>
 
-                {error && <p>Debe introducir una fecha de validez</p>}
+                {error && <p id='yellow'>Debe introducir una fecha de validez</p>}
               </div>
               <p>Total price = {`${totalPrice}€`}</p>
               <button className='red-btn' onClick={buy}>

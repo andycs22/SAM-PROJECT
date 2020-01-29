@@ -56,7 +56,7 @@ export function Footer() {
         </ul>
       </section>
       <section className='copyright'>
-        Developed by: Santi, Andy y Martín. Copyright SAM (c).
+        Developed by: Andrea Castro y Martín Serantes. Copyright SAM (c).
       </section>
     </footer>
   );

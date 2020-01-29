@@ -13,7 +13,7 @@ export function ProductListCo({ products, selectedIndex, onProductSelected }) {
 
   return (
     <div className='list-products-co'>
-      <h2>Productos publicados</h2>
+      <h2 className='title-edit-product'>Productos publicados</h2>
       <ul className='product-list'>
         {products.map((product, index) => (
           <li

@@ -35,6 +35,7 @@
 #comment:focus {
   outline: none;
   color: var(--azul1);
+  background-color: #f1f3ce;
 }
 
 select#document_type {
@@ -73,9 +74,15 @@ select#document_type {
 
 button#btn-rate{
 background: #ffffff;
+font-size: 12px;
+padding: 0.5rem;
+margin: 0 0 0 1rem;
 color:var(--azul1);
 border-radius:5px;
-margin-left: 1rem;
+}
+button#btn-rate:hover{
+  border: 1px solid var(--azul1);
+  color: black;
 }
 div#single-product{
   display: flex;
@@ -87,13 +94,31 @@ div#rate-line{
   margin-bottom: 2rem;
   display: flex;
   flex-direction: row;
+  align-items: flex-end;
 }
 .rate-p{
-  color: var(--azul2);
+  color: yellow;
   font-weight: 600;
   font-size:2rem;
   margin-left: 1rem;
 }
 .valoration-title{
   align-self: flex-end;
+}
+div.products-order-history button.red-btn,
+form.form-rate button#send{
+  background-color: var(--rojo1);
+  color:#ffffff;
+}
+div.products-order-history button.white-btn,
+main.main-rate a.white-btn{
+  background-color: #ffffff;
+  color: black;
+}
+div.products-order-history button.red-btn:hover,
+div.products-order-history button.white-btn:hover,
+form.form-rate button#send,
+main.main-rate a.white-btn{
+  font-weight: 500;
+  letter-spacing: 2.5px;
 }

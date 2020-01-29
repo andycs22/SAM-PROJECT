@@ -23,7 +23,7 @@ export function Product() {
       <section className='product-co'>
         <h1 className='main-title top'>Gestionar mis productos</h1>
         <section className='select-product'>
-          <button className='bto-product1' onClick={choiceCreate}>
+          <button className='bto-product' onClick={choiceCreate}>
             Crear producto
           </button>
           <button className='bto-product' onClick={choiceEdit}>

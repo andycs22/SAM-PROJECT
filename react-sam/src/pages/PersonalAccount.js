@@ -28,6 +28,7 @@ export function PersonalAccount() {
   return (
     <React.Fragment>
       <Header />
+      <main className='personal'>
       <h1 className='main-title top'>Mi Cuenta</h1>
       <div>
         <section className='main-personalAccount'>
@@ -45,6 +46,7 @@ export function PersonalAccount() {
           </div>
         </section>
       </div>
+      </main>
       <Footer />
     </React.Fragment >
   );

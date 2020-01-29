@@ -98,7 +98,7 @@ export function CatalogueProduct() {
             <span className='valoration-title'>Valoración media: </span>
             <span className='rate-p'>{rateOfTheProduct()}{' '}</span>
             {!isNaN(rateOfTheProduct()) && (
-              <button id='btn-rate' onClick={showRate}>Ver valoraciones</button>
+              <button id='btn-rate' className='white-btn' onClick={showRate}>Ver valoraciones</button>
             )}
           </div>
 
@@ -136,7 +136,7 @@ export function CatalogueProduct() {
               ref={register(EDITPRODUCT_VALIDATIONS.theRest)}
               className='inputHidden'
             />
-            <div className='group3'>
+            <div className='group1'>
               <label>Descuento adicional: </label>
               <input
                 type='number'
@@ -145,7 +145,7 @@ export function CatalogueProduct() {
               />
               <span className='bar'></span>
             </div>
-            <div className='group3'>
+            <div className='group1'>
               <label>Precio Oferta:</label>
               <input
                 type='number'

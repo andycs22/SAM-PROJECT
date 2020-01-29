@@ -67,8 +67,10 @@ div.line{
 }
 /* puntuales */
 .code {
-  color: #fff;
-  font-size: 1.2rem;
+  color: #ffffff;
+  font-size: 1.5rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid var(--rojo1);
 }
 .inputHidden {
   display: none;
@@ -106,6 +108,9 @@ section.photo-back h1 {
   color: #ffffff;
   text-align: center;
   padding: 0.5rem;
+}
+p#yellow{
+  color:yellow;
 }
 /* header-nav */
 
@@ -266,7 +271,7 @@ a:visited {
 .red-btn {
   background-color: none;
   color: white;
-  border: none;
+  border: 1px solid var(--rojo1);
 }
 
 .red-btn:hover {
@@ -300,9 +305,8 @@ a:visited {
 .white-btn {
   background-color: none;
   color: white;
-  border: none;
+  border: 1px solid #ffffff;
 }
-
 .select-product button:hover,
 .white-btn:hover {
   background-color: #f1f3ce;
@@ -314,6 +318,7 @@ a:visited {
 path{
   width: 50%;
 }
+
 /* Formularios */
 .group1,
 .group2 {
@@ -348,9 +353,11 @@ path{
   position: absolute;
   top: -10px;
   font-size: 12px;
-  color: #c0e0fa;
+  color: var(--azul2);
 }
-
+input::-webkit-input-placeholder{
+  font-size: 16px;
+}
 select#category {
   padding: 0.2rem;
   font-size: 14px;
@@ -370,7 +377,8 @@ select#category {
   border-radius: 6px;
 }
 
-.form-create-product .label {
+.form-create-product .label,
+form.form-register .label {
   color: black;
   font-size: 16px;
   position: absolute;
