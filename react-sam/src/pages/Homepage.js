@@ -2,36 +2,39 @@ import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
+import banner from '../assets/images/banner2.jpg'
+import { Slider } from '../components/Slider';
+import { Cards} from '../components/Cards';
 import catalogoSAM from '../assets/images/catalogoSAM.png';
+
 import { useHistory } from 'react-router';
 
+
 export function Homepage() {
-  const history = useHistory();
+  const history = useHistory();  
 
   return (
     <React.Fragment>
       <Header />
       <main className='main-home'>
-        <h1 className='main-top'>Software A Medida</h1>
+        <span className='banner'><img src={banner}></img></span>
+        <section className='carousel'>            
+            <Slider />    
+            </section> 
         <div className='main-btn'>
           <button className='code-btn' onClick={() => history.push('/code')}>
             ¿Tienes un código?
           </button>
+          <Link to='/catalogue'>
+            <button className='cat-btn'>Catálogo</button>
+          </Link>
           <Link to='/register'>
             <button className='reg-btn'>Regístrate</button>
           </Link>
-
-          <section className='demo-prod'>
-            <div className='demo1-img'>
-              <Link to='/catalogue'>
-                <img src={catalogoSAM}></img>
-                <p>Visita el catalogo</p>
-              </Link>
-            </div>
-          </section>
-        </div>
+          </div> 
+          <Cards />
       </main>
       <Footer />
     </React.Fragment>
   );
-}
+  }
