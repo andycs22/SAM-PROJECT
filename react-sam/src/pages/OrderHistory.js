@@ -21,6 +21,7 @@ export function OrderHistory() {
   return (
     <React.Fragment>
       <Header />
+      <main className='main-confirmation'>
       <h1 className='main-title top'>Mis pedidos</h1>
       <div className='products-order-history'>
         <ul>
@@ -50,7 +51,7 @@ export function OrderHistory() {
           Volver
         </button>
       </div>
-
+      </main>
       <Footer />
     </React.Fragment>
   );

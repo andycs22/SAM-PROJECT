@@ -6,13 +6,20 @@
   text-align: center;
   padding: 0.5rem;
 }
-ul.product-list{
+ul.product-list2{
   width: fit-content;
   border-top:1px solid #34495E;
 }
-ul.product-list li{
+ul.product-list2 li{
   padding: 0.5rem 1rem;
 border-bottom:1px solid #34495E;
+}
+ul.product-list2 li div,
+.list-po-pack,
+form.editForm div.group1{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 h2.code-list{
   color: var(--rojo1);
@@ -21,7 +28,7 @@ h3.code-list{
   color: #ffffff;
   font-size: 1.5rem;
   align-self:start;
-  padding-left: 1.1rem;
+  padding-left: 2.5rem;
   font-family: var(--ubuntu);
 }
 .code2{
@@ -40,10 +47,17 @@ div.packages-offered button.white-btn{
 div.packages-offered button.white-btn:hover{
   font-weight: 500;
 }
+ul.listPoPack{
+  width: 400px;
+}
 ul.listPoPack li{
   border-bottom: 1px solid #ffffff;
   margin:1rem; 
 }
+/* ul.listPoPack li div{
+  display: flex;
+  flex-direction: column;
+} */
 ul.listPoPack .titP{
   color: aquamarine;
   margin-right:0.5rem ;

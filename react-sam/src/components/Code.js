@@ -34,13 +34,13 @@ export function Code() {
           <ul>
             {productsInPack.map(productIP => (
               <li key={productIP.id}>
-                <div>
+                <div className='products-in-pack'>
                   <img src={productIP.photo} alt='productimage' />
                   <p>{productIP.name}</p>
                   <p>Precio catalogo: {productIP.old_price}€</p>
                   <p>con descuento adicional del {productIP.discount} %</p>
-                  <p>Adquierelo al precio especial de: {productIP.final_price}€</p>
-                  <button onClick={() => addItemToCart(productIP)}>Lo quiero</button>
+                  <p className='of-price'>Adquierelo al precio especial de: <span className='red-price'> {productIP.final_price}€</span></p>
+                  <button className='white-btn' onClick={() => addItemToCart(productIP)}>Lo quiero</button>
                 </div>
               </li>
             ))}

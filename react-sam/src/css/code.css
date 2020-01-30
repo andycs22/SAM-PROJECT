@@ -4,6 +4,35 @@ main#main-code{
   flex-direction: column;
   align-items: center;
 }
+main#main-code ul{
+  padding: 0;
+}
+.products-in-pack{
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px solid var(--azul2);
+}
+.products-in-pack p{
+  padding: 0;
+  margin: 0.3rem;
+}
+.of-price{
+  font-size: 1.2rem;
+}
+.red-price{
+  color: var(--rojo1);
+  font-size: 2rem;
+}
+#main-code .white-btn{
+color: black;
+background: #ffffff;
+}
+#main-code .white-btn:hover{
+  font-weight: 500;
+  letter-spacing: 2.5px;
+}
 main#main-code form#show-code-pack{
   width: 300px;
 }

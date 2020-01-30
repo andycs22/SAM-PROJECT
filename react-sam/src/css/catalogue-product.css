@@ -111,7 +111,7 @@ ul.comments-content li{
 /*Organizador*/
 .form-offer {
   width: 400px;
-   margin-top: 2rem;
+   margin: 1rem 0;
    padding-top: 1rem;
   border-radius: 10px;
   background: white;
@@ -184,4 +184,13 @@ button#addP:hover{
   .group-btn .send-btn:last-of-type {
     margin-bottom: 1rem;
   }
+  div.comments{
+    display: flex;
+    flex-direction: column;
+    width: 560px;
+  }
+  div.comments p{
+    margin:0.5rem;
+  }
 }
+

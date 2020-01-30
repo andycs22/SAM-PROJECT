@@ -17,6 +17,8 @@
 @import url('css/footer.css');
 @import url('css/packages.css');
 @import url('css/code.css');
+@import url('css/confirmation.css');
+
 
 :root {
   --azul1: #1b2631;

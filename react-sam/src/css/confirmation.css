@@ -1,16 +1,28 @@
+.main-confirmation{
+  flex-grow: 1;
+}
+.main-confirmation div.code-yes{
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+}
 .animation {
     width: 400px;
-
 }
-
-.top div p {
-  color: red;
-}
-
-span .code {
+.btn-white{
+  padding: 0.2rem;
+  width: fit-content;
+  border-radius: 5px;
   font-family: var(--rubik);
 }
 
+.code {
+  font-family: var(--rubik);
+  margin: 0 2rem 0 1rem;
+}
+#info-pack{
+  color:#ffffff;
+}
 .animation-cart #ani{
 width: 50%;
 }

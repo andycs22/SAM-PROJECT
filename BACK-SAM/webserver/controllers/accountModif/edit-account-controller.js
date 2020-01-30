@@ -35,11 +35,12 @@ async function editAccount(req, res, next) {
     const isPasswordOk = await bcrypt.compare(accountData.oldPassword, pass[0].password);
 
     if (!isPasswordOk) {
-      return res.status(401).send('Constraseña modificada');
+      return res.status(401).send('Contraseña no valida');
     } else {
       await connection.query(sqlInsert, {
         password: securePassword,
       });
+      return res.status(201).send('Contraseña modificada');
     }
     connection.release();
   } catch (e) {

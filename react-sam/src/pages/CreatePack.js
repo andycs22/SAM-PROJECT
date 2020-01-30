@@ -55,8 +55,8 @@ export function CreatePack() {
   return (
     <React.Fragment>
       <Header />
-      <main className='main-flex top'>
-        <h1 className='main-title'>Generando un paquete</h1>
+      <main className='main-flex'>
+        <h1 className='main-title top'>Generando un paquete</h1>
         <section className='create-pack'>
           {totalItems === 0 && (
             <React.Fragment>

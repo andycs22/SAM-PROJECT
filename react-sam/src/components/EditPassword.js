@@ -11,10 +11,12 @@ export function EditPassword() {
     mode: 'onBlur'
   });
   const history = useHistory();
+
   const editP = formData => {
     console.log(formData);
     return editPassword(formData)
       .then(response => alert(response.data))
+      .then(history.push('/login'))
       .catch(error => {
         setError(error);
       });

@@ -1,3 +1,4 @@
+
 .catalogue-complete {
   font-family: var(--ubuntu);
   display: flex;
@@ -65,14 +66,15 @@ background: #fd5c5c;
 }
 
 .catalogue-products li {
-  width: 400px;
+  width: 380px;
   height: auto;
-  margin-bottom: 2rem;
+  margin: 0.5rem 0.5rem 2rem 0.5rem;
   flex: grid;
   grid-template-rows: 240px 50px 160px 60px;
   background-color: rgb(255, 255, 255);
   border-radius: 3px;
   text-align: center;
+  border: 2px solid #ffffff;
 }
 
 .catalogue-products li img {

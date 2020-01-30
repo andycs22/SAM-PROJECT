@@ -55,10 +55,14 @@
 }
 
 .form-login .red-btn {
-  color: black;
+  color: #ffffff;
   margin-left: 22%;
+  background-color: var(--rojo1);
 }
-
+.form-login .red-btn:hover {
+font-weight: 500;
+letter-spacing: 2.5px;
+}
 .register-link a {
   color: var(--azul1);
 }

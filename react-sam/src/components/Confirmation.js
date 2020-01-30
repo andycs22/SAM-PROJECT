@@ -26,9 +26,12 @@ function Confirmation() {
   return (
     <React.Fragment>
       <Header />
-      <div className='top'>
+      <main className='main-confirmation'>
+      <div>
         {code.length > 0 && (
           <div>
+            <p className='main-title top'>Paquete cerrado</p>
+            <div id='info-pack'>
             <p>
               CODIGO GENERADO: <span className='code'>{code}</span>
             </p>
@@ -37,12 +40,12 @@ function Confirmation() {
               onClick={() => window.location.reload()}
             >Copiado
             </button>
-            <p>Gracias por usar SAM</p>
+            </div>
           </div>
         )}
         {code.length === 0 && (
           <div>
-            <p className='main-title'>Gracias por usar SAM</p>
+            <p className='main-title top'>Gracias por usar SAM</p>
             <div className='animation-cart'>
               {/* <Lottie id='ani' options={{ animationData: noteData, ...defaultOptions }} /> */}
             </div>
@@ -52,6 +55,7 @@ function Confirmation() {
           Seguir comprando
         </button>
       </div>
+      </main>
       <Footer />
     </React.Fragment>
   );
