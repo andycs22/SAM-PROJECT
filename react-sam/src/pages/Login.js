@@ -4,7 +4,7 @@ import useForm from 'react-hook-form';
 import { useAuth } from '../shared/context/auth-context';
 import { LOGIN_VALIDATIONS } from '../shared/validations';
 import { Field } from '../components/Field';
-import logo from '../assets/images/logo-a.png';
+import logo from '../assets/images/SAMlogotipoBlanco.png';
 
 function Login() {
   const { signIn } = useAuth();

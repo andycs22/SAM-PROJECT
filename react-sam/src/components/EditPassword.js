@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { editPassword } from '../http/authService';
 import { REGISTER_VALIDATIONS } from '../shared/validations';
 import { useHistory } from 'react-router';
-import logo from '../assets/images/logo-a.png';
+import logo from '../assets/images/SAMlogotipoBlanco.png';
 
 export function EditPassword() {
   const { register, handleSubmit, setError } = useForm({

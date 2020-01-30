@@ -126,8 +126,8 @@ p#yellow{
   display: grid;
   grid-template-columns: 0.7fr 4fr 1fr 1fr 1fr;
   grid-template-rows: auto;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
+  /* border-top: 1px solid black;
+  border-bottom: 1px solid black; */
   align-items: center;
   background-color: rgb(255, 255, 255);
   /* opacity: 0.85; */

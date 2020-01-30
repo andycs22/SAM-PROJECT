@@ -53,8 +53,8 @@ async function createProduct(req, res, next) {
   cloudinary.v2.uploader.upload_stream({
     resource_type: 'image',
     public_id: userId,
-    width: 200,
-    height: 200,
+    width: 600,
+    height: 600,
     format: 'jpg',
     crop: 'limit',
   }, async (err, result) => {

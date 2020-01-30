@@ -1,7 +1,9 @@
 import React from 'react';
 import { createProductCo } from '../http/ProductService';
+import {useHistory} from 'react-router';
 
 export function CreateProduct() {
+  const history=useHistory();
   const handleFormSubmit = e => {
     e.preventDefault();
     createP()
@@ -19,8 +21,9 @@ export function CreateProduct() {
       }
     };
     return createProductCo(formData, config)
-    .then(window.location.reload())
-    .then(alert('producto publicado'))
+    .then(response => alert(response.data))
+    .then(history.push('/catalogue'))
+    .catch(alert('error'))
   };
 
   return (

@@ -12,7 +12,9 @@
   height: 70px;
   width: auto;
 }
-
+.red{
+  color:var(--rojo1);
+}
 .main-register h1 {
   color: var(--azul1);
   font-family: var(--ubuntu);

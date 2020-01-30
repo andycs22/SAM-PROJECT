@@ -29,9 +29,9 @@ const history=useHistory();
         <img src={defaultProduct.photo} />
       </section>
       <section className='productData'>
-        Nombre: <p>{defaultProduct.name}</p>
-        Descripción: <p>{defaultProduct.description}</p>
-        Categoría: <p>{defaultProduct.category}</p>
+      <p><span className='aqua'> Nombre: </span>{defaultProduct.name}</p>
+      <p><span className='aqua'>  Descripción:</span> {defaultProduct.description}</p>
+      <p><span className='aqua'>  Categoría: </span>{defaultProduct.category}</p>
       </section>
 
       <form onSubmit={handleSubmit(handleUpdate)} className='editForm'>

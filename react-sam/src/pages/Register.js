@@ -4,7 +4,7 @@ import { useAuth } from '../shared/context/auth-context';
 import useForm from 'react-hook-form';
 import { REGISTER_VALIDATIONS } from '../shared/validations';
 import { ButtonsType } from '../components/ButtonsType';
-import logo from '../assets/images/logo-a.png';
+import logo from '../assets/images/SAMlogotipoBlanco.png';
 
 export function Register() {
   const { signUp } = useAuth();
@@ -49,7 +49,7 @@ export function Register() {
       <Link to='/'>
         <img src={logo} alt='logo' />
       </Link>
-      <h2>Escoge como vivir tu experiencia</h2>
+      <h2 className='red'>Escoge como vivir tu experiencia</h2>
       <ButtonsType onTypeChange={setType} />
       {type.length > 0 && (
         <form
