@@ -31,7 +31,7 @@ export function About() {
         <Container maxWidth='lg'>
           <section className='intro'>
             <p>
-              <TypoGraphy variant='body1'>
+              <TypoGraphy variant='body1' className='about-text'>
                 SAM es el acróstico de Software A Medida. Nace tras ver la necesidad
                 de ofrecer a los asistentes a eventos obsequios mas practicos y
                 faciles de transportar que los 'paquetes de bienvenida'
@@ -42,7 +42,7 @@ export function About() {
           <section className='content'>
             <img src={sobre} width='100%vw' />
             <p>
-              <TypoGraphy variant='body1'>
+              <TypoGraphy variant='body1' className='about-text'>
                 No sólo vendemos el software mas actual y con mayor demanda para las soluciones
                 del día a día de las empresas y usuarios, sino que lo hacemos con los descuentos
                 mas atractivos. La idea es que encuentres lo que busques rapido, facil y economico
@@ -50,7 +50,7 @@ export function About() {
             </TypoGraphy>
             </p>
             <p>
-              <TypoGraphy variant='body1'>
+              <TypoGraphy variant='body1' className='about-text'>
                 Tambien generamos software propio, estamos creciendo para poder dar respuesta a
                 la gran demanda por lo que si quieres trabajar con nosotros dejanos tus datos y
                 nos pondremos en contacto contigo
@@ -59,9 +59,9 @@ export function About() {
           </section>
 
           <section className='contact' id='contactUs'>
-            <TypoGraphy variant='h4' gutterBottom>
+            <TypoGraphy variant='h4' gutterBottom className='about-text'>
               Contáctanos
-          </TypoGraphy>
+          </TypoGraphy >
             <DialogContent>
               <TextField
                 autoFocus
@@ -107,6 +107,7 @@ export function About() {
                   label='Nombre'
                   type='text'
                   fullWidth
+                  className='about-text'
                 />
                 <TextField
                   margin='dense'
@@ -114,6 +115,7 @@ export function About() {
                   label='Apellidos'
                   type='text'
                   fullWidth
+                  className='about-text'
                 />
                 <TextField
                   margin='dense'
@@ -121,6 +123,7 @@ export function About() {
                   label='Teléfono'
                   type='phone'
                   fullWidth
+                  className='about-text'
                 />
                 <TextField
                   margin='dense'
@@ -128,6 +131,7 @@ export function About() {
                   label='Email'
                   type='email'
                   fullWidth
+                  className='about-text'
                 />
               </DialogContent>
               <DialogActions>

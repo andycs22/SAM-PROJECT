@@ -13,3 +13,9 @@
 .job {
   padding: 4rem 0 4rem 0;
 }
+
+
+.about-text {
+  color:white;
+  font-family: var(--rubik);
+}
