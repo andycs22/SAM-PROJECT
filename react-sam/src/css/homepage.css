@@ -1,19 +1,46 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:600,700&display=swap');
+
 main {
   flex-grow: 1;
 }
 
 .main-home {
 flex-grow: 1;
+width: 100vw;
 background-color: white;
 }
 
-.banner img {
-  margin-top: 57px;
-width: 100vw;
+div .main-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  height: 400px;
+  width: 100vw;
+  background-image: url('../assets/images/plantilla3.jpg');
+  background-size: cover;
 }
 
+.main-btn h1{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 50px;
+  font-weight:400;
+  justify-self: left;
+  color:white;
+  letter-spacing: .3rem;
+  align-self:center;
+  margin-bottom: 2rem;
+    }
+
+  @media screen and (min-width: 1000px) {
+.main-btn h1{
+  margin-bottom: 8rem;
+}
+  }
+
 .code-btn {
-  width: 180px;
+  margin: 0 2rem 2rem 0;
+  width: 190px;
   height: 50px;
   border-radius: 10px;
   border-style: none;
@@ -25,7 +52,8 @@ width: 100vw;
 }
 
 .reg-btn {
-  width: 180px;
+  margin: 0 2rem 2rem 0;
+  width: 190px;
   height: 50px;
   border-radius: 10px;
   border-style: none;
@@ -38,14 +66,15 @@ width: 100vw;
 }
 
 .cat-btn {
-  width: 180px;
+  margin: 0 2rem 2rem 0;
+  width: 190px;
   height: 50px;
   border-radius: 10px;
   border-style: none;
   font-family: var(--ubuntu);
   font-size: 16px;
-  background-color: rgb(255, 211, 92);
-  color: rgb(131, 87, 87);
+  background-color: rgb(189, 148, 38);
+  color: rgb(255, 255, 255);
   box-shadow: 10px 10px 5px -6px rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
@@ -55,7 +84,6 @@ width: 100vw;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  margin-top: 2rem;  
 }
 
 div .code-btn {  
@@ -64,16 +92,37 @@ div .code-btn {
 
 div .reg-btn {
   cursor: pointer;
+  
+}
+
+div .cat-btn:hover,
+div .code-btn:hover,
+div .reg-btn:hover{
+  letter-spacing: 2px;
+  transition: ease 0.5s;
+}
+
+@media screen and (min-width: 900px){
+  div .main-btn {
+    display: flex;
+    flex-direction: row;
+
+  }
 }
 
 /* Carrusel */
 
 .carousel{
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-top: 2rem;
 }
+
+.carousel h2{
+  font-family: var(--ubuntu);
+  }
 
 .carousel img{
   max-width: 100%;
@@ -210,85 +259,114 @@ input[id="3"]:checked ~ .pagination .pagination-item p[for="3"]{
   }
 }
 
-/* Tarjetas */
+/*Tarjetas*/
 
-.home-cards {
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: center;
+.cards-exp h2{
+  font-family: var(--ubuntu);  
+  margin: 4rem 0 1rem 0;  
+  text-align: center;
+}
+
+
+ .wrap{
+   
+	margin-bottom: 5rem;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+}
+
+.tarjeta-wrap{
+	margin: 10px;
+	-webkit-perspective: 600;
+	perspective: 600;
+}
+
+.tarjeta{
+	width: 300px;
+	height: 300px;
+	background: var(--azul2);
+	position: relative;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	-webkit-transition: .7s ease;
+	transition: .7s ease;
+	-webkit-box-shadow: 0px 10px 15px -5px rgba(0,0,0,0.65);
+	box-shadow: 0px 10px 15px -5px rgba(0,0,0,0.65);
+
+}
+
+.adelante, .atras{
+	width: 300px;
+	height: 300px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.adelante{
+	width: 300px;
+	height: 300px;
+}
   
-}
-
-.card {
-  margin: 2rem 0 2rem 0;
-  padding-top: 0.5rem;  
-  border-radius: 3px;
-  width: 376px;
-  height: 250px;
-  overflow: hidden;
-}
-.card:hover{
-  height: 450px;
-  transition: 0.5s;
-  transform: scale(1.1);  
-}
-
-.photo-card img{
-  width: 376px;
-  height: 254px; 
-  border-radius: 3px; 
-}
-
-.description-card {
-  height: 128px;
-  text-align: center;  
-  background-color: var(--azul2);
-  color: white;
-  border-radius: 3px;
-}
-
-.description-card h2{
-  font-family: var(--ubuntu);
-  margin: 0;
-  padding: 0.2rem 0 0.2rem;
-}
-
-.description-card p{
-  font-family: var(--rubik);
-  font-size: 14px;
-  padding: 0 0.5rem 0 0.5rem;  
-  margin-top: 0;
-}
-
-.reg-cards {
-  margin-bottom: 0.8rem;
-}
-.reg-cards a{
-  padding:0.3rem;
-  font-family: var(--ubuntu);
-  border-radius: 3px;
-  border:0.5px solid white;
-}
-
-.reg-cards a:hover {
-  background: white;
-  color:black;
-  transition: 0.5s;
-  letter-spacing: 0.2rem;
-}
-
-@media screen and (min-width: 1000px) {
-.home-cards{
+.atras{
+	transform: rotateY(180deg);
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: flex-start;
+  flex-direction: column;	
+	justify-content: center;	
+	align-items: center;
+	text-align: center;
+	color: #fff;
+
 }
 
-.card {
-  width: 300px;
-  height: 250px;
-  overflow: hidden;
+.atras h2{
+  font-family: var(--ubuntu);
+  border-bottom: 1px solid grey;
 }
+
+.atras p{
+  font-family: var(--rubik);
+  padding: 0 1rem 0 1rem;
 }
+
+.tarjeta-wrap:hover .tarjeta{
+	-webkit-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+}
+
+.card1{
+	background-image: url('../assets/images/colaborador.jpg');
+	background-size: cover;
+}
+
+.card2{
+	background-image: url('../assets/images/organizador.jpg');
+	background-size: cover;
+}
+
+.card3{
+	background-image: url('../assets/images/usuario.jpg');
+	background-size: cover;
+}
+
+@media screen and (max-width: 1000px){
+  .wrap {
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center;
+    text-align: center; */
+  }
+} 
