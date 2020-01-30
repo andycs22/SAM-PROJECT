@@ -12,7 +12,7 @@
   height: 70px;
   width: auto;
 }
-.red{
+.red, #red{
   color:var(--rojo1);
 }
 .main-register h1 {

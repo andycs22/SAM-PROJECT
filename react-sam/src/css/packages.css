@@ -62,8 +62,9 @@ ul.listPoPack .titP{
   color: aquamarine;
   margin-right:0.5rem ;
 }
-img.imgPoPack{
-  width: 100%;
+img#imgPoPack{
+  width: 200px;
+  height: auto;
 }
 div#edit-prod-pack{
   margin-top:5.5rem;

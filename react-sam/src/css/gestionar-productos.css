@@ -90,6 +90,10 @@ button#sendProdcut:hover{
   font-weight: 500;
   letter-spacing: 2.5px;
 }
+#edit-prod section.imageData img{
+  width: 200px;
+  height: auto;
+}
 .imageData {
   justify-self: center;
 }

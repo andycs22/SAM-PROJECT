@@ -20,7 +20,7 @@ export function ProductPackListOr({ productsPack, selectedIndex, onProductSelect
   return (
     <div className='list-pack-co'>
       {productsPack.length === 0 && (
-        <h3 className='code-list'>Todavía no hay paquetes publicados</h3>
+        <h3 className='code-list' id='red'>Todavía no hay paquetes publicados</h3>
       )}
       {productsPack.length > 0 && (
         <h3 className='code-list'>Selecciona para mas información</h3>
@@ -64,7 +64,7 @@ export function ProductPackListOr({ productsPack, selectedIndex, onProductSelect
               {productsInPack.map(productIP => (
                 <li key={productIP.id}>
                   <div className='list-po-pack'>
-                    <img className='imgPoPack' src={productIP.photo} alt='productimage' />
+                    <img id='imgPoPack' src={productIP.photo} alt='productimage' />
                     <p>{productIP.name}</p>
                     <p><span className='titP'>Precio catalogo: </span>{productIP.old_price}€</p>
                     <p><span className='titP'>Descuento Adicional </span>{productIP.discount} %</p>

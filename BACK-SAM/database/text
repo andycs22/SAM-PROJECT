@@ -68,7 +68,7 @@ DEFAULT CHARACTER SET = latin1;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `SAMproject`.`order_final` (
   `id` VARCHAR(60) NOT NULL,
-  `price_final` INT(20) NULL DEFAULT NULL,
+  `price_final` FLOAT(6,2) NULL DEFAULT NULL,
   `order_date` DATE NULL DEFAULT NULL,
   `user_id` INT(20) NOT NULL,
   PRIMARY KEY (`id`),
@@ -88,7 +88,7 @@ CREATE TABLE IF NOT EXISTS `SAMproject`.`enter_product_order` (
   `id_product` INT(20) NOT NULL,
   `id_order` VARCHAR(60) NOT NULL,
   `quantity` INT(200) NULL DEFAULT NULL,
-  `price_at_order` INT(200) NULL DEFAULT NULL,
+  `price_at_order` FLOAT(6,2) NULL DEFAULT NULL,
   PRIMARY KEY (`id_product`, `id_order`),
   INDEX `id_order` (`id_order` ASC),
   CONSTRAINT `enter_product_order_ibfk_1`
@@ -147,7 +147,7 @@ DEFAULT CHARACTER SET = latin1;
 CREATE TABLE IF NOT EXISTS `SAMproject`.`product_include_package` (
   `id_product` INT(20) NOT NULL,
   `id_paq` VARCHAR(60) NOT NULL,
-  `paq_price` INT(20) NULL DEFAULT NULL,
+  `paq_price` FLOAT(6,2) NULL DEFAULT NULL,
   `paq_disc` VARCHAR(20) NULL DEFAULT NULL,
   PRIMARY KEY (`id_product`, `id_paq`),
   INDEX `id_paq` (`id_paq` ASC),

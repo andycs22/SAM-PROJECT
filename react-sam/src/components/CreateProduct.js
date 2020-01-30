@@ -8,7 +8,7 @@ export function CreateProduct() {
     e.preventDefault();
     createP()
     .then(response => {
-      console.log(response.data);
+      console.log(response);
     })
   };
 
@@ -22,8 +22,7 @@ export function CreateProduct() {
     };
     return createProductCo(formData, config)
     .then(response => alert(response.data))
-    .then(history.push('/catalogue'))
-    .catch(alert('error'))
+    .then(history.push('/personalAccount'))
   };
 
   return (
